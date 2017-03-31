@@ -1,0 +1,287 @@
+   <script>
+$(function (){
+$(".contents:gt(0)").css("display","none");
+
+$("#tab li").click(function() {
+var num = $("#tab li").index(this);
+$("#tab li").removeClass("now");
+$(this).addClass("now");
+
+$(".contents").css("display","none");
+$(".contents").eq(num).css("display","block");
+});
+});
+    </script>
+ 
+ 
+    <header id="treatment" class="top-area parallax" style="height: 200px;">
+        <!-- Header Text Area Start -->
+        <div class="header-text-area sub text-left">
+            <div class="header-text-content">
+                <div class="container">
+                    <div class="row">
+                        <!-- Header Text -->
+                        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                            <div id="header-text" class="header-text">
+                                <h2 class=" wow fadeInDown" data-wow-duration="1.5s" data-wow-delay="1200ms">管理者用INDEX</h2>
+                                <h3 class=" wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="600ms"></h3>
+                                <%= link_to 'お客様ホーム画面はこちら', root_path, :class => "header-btn2" %>
+                            </div>
+                        </div> <!-- End of Header Text -->
+                    </div> <!-- End of Row -->
+                </div> <!-- End of Container -->
+            </div> <!-- End of Header Text Content -->
+        </div> <!-- End of Header Text Area -->
+
+
+
+    </header>
+
+
+    <!-- Content Section Start -->
+    <section id="content">
+        <!-- Blog Section Start -->
+        <div class="blog" id="blog">
+            <div class="testimonial-bg"></div>
+            <div class="container">
+                <!-- Section Title Start -->
+                <div class="row text-center section-title">
+                    <div class="col-md-12">
+                        <h3>投稿済みBlog一覧</h3>
+                        <div class="separator margin-bottom"></div>
+                    </div>
+                    <%= link_to '新規ブログ作成はこちら', new_blog_path, :class => "header-btn2" %>
+                </div> <!-- End of Section Title -->
+                <div class="row">
+                    <!-- Blog Group Start -->
+                    <div class="blog-group">
+                    <% @blogs.each do |m| %>
+                        <!-- Single Blog Column Start -->
+                        <div class="col-md-4">
+                            <!-- Single Blog 1 Start -->
+                            <div class="single-blog">
+                                <div class="img">
+                                <% if m.blogimage? %>
+                                    <%= image_tag m.blogimage.thumb.url, :class => "img-responsive" %>
+                                    <% else %>
+                                    <%= image_tag 'noimage.gif' %>
+                                    <% end %>
+                                </div>
+                                <span><%= m.created_at %></span>
+                                <%= link_to blog_path(m) do %><h4><%= m.title %></h4><% end %>
+                                <p class="margin-bottom"><%= m.content.truncate(30) %></p>
+                                <p class="margin-bottom"><%= link_to edit_blog_path(m) do %>
+                                               <i class="fa fa-pencil-square-o"></i>
+                                               <% end %>
+                                            <%= link_to blog_path(m), method: :delete, data: {confirm: "このブログを削除しますか？"} do %>
+                                               <i class="fa fa-trash-o"></i>
+                                               <% end %></p>
+                            </div> <!-- End of Single Blog 1 -->
+                        </div> <!-- End of Single Blog Column -->
+                        <% end %>
+                    </div> <!-- End of Blog Group -->
+                </div> <!-- End of Row -->
+            </div> <!-- End of Container -->
+        </div>
+        <!-- End of Blog Section -->
+
+ <!-- Portfolio Section Start -->
+        <div class="portfolio" id="portfolio">
+            <div class="container">
+                <!-- Section Title Start -->
+                <div class="row text-center section-title">
+
+                    <div class="col-md-12">
+                        <h3>登録済みサービス一覧</h3>
+                       <div class="separator margin-bottom"></div>
+                    </div>
+                    <%= link_to '新規サービス登録はこちら', new_service_path, :class => "header-btn2" %>
+
+                </div>
+                <!-- End of Section Title -->
+                <!-- Portfolio Filter Row Start -->
+                <div class="row">
+                    <div class="col-md-12">
+                    <div id="tab">
+                        <!-- Portfolio Filter Start -->
+                        <div class="portfolio-filter text-center">
+                        
+                            <ul class="nav">
+                                <li class="active now" data-filter="*">all</li>
+                                <li data-filter=".aroma">Aroma treatment</li>
+                                <li data-filter=".accessories">Accessories</li>
+                                <li data-filter=".school">School</li>
+                            </ul>
+                        
+                        </div> <!-- End of Portfolio Filter -->
+                        </div>
+                    </div>
+                </div> <!-- End of Portfolio Filter Row -->
+                <!-- Portfolio Items Row Start -->
+                <div class="contents">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Portfolio Items Start -->
+                        <div class="porfolio-items">
+                        <% @services.each do |m| %>
+                            <!-- Single Portflio 1 Start -->
+                            <div class="single-porfolio aroma">
+                                <div class="img text-center">
+                                    <% if m.service_image? %>
+                                     <%= image_tag m.service_image.thumb.url, :class => "img-responsive" %>
+                                    <% else %>
+                                     <%= image_tag 'noimage.gif' %>
+                                    <% end %>
+
+                                    <div class="porto-overlay"></div>
+                                    <div class="porto-body">
+                                        <div class="porto-text">
+                                            <h4><%= m.name %></h4>
+                                            <p><%= m.category %></p>
+                                        </div>
+                                        <div class="porto-icon">
+                                            <%= link_to service_path(m) do %>
+                                               <i class="fa fa-eye"></i>
+                                               <% end %>
+                                               <%= link_to edit_service_path(m) do %>
+                                               <i class="fa fa-pencil-square-o"></i>
+                                               <% end %>
+                                            <%= link_to service_path(m), method: :delete, data: {confirm: "この登録サービスを削除しますか？"} do %>
+                                               <i class="fa fa-trash-o"></i>
+                                               <% end %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- End of Single Portflio 1 -->
+                            <% end %>
+                         
+
+
+                        </div> <!-- End of Portfolio Items -->
+                    </div>
+                </div> <!-- End of Portfolio Items Row -->
+            </div>
+
+           <div class="contents">
+           <div class="row">
+                    <div class="col-md-12">
+                        <!-- Portfolio Items Start -->
+                        <div class="porfolio-items">
+                         <% @aroma.each do |m| %>
+                            <!-- Single Portflio 1 Start -->
+                            <div class="single-porfolio aroma">
+                                <div class="img text-center">
+                                    <% if m.service_image? %>
+                                     <%= image_tag m.service_image.thumb.url, :class => "img-responsive" %>
+                                    <% else %>
+                                     <%= image_tag 'noimage.gif' %>
+                                    <% end %>
+                                    <div class="porto-overlay"></div>
+                                    <div class="porto-body">
+                                        <div class="porto-text">
+                                            <h4><%= m.name %></h4>
+                                            <p><%= m.category %></p>
+                                        </div>
+                                        <div class="porto-icon">
+                                            <%= link_to service_path(m) do %>
+                                               <i class="fa fa-eye"></i>
+                                               <% end %>
+                                               <%= link_to edit_service_path(m) do %>
+                                               <i class="fa fa-pencil-square-o"></i>
+                                               <% end %>
+                                            <%= link_to service_path(m), method: :delete, data: {confirm: "この登録サービスを削除しますか？"} do %>
+                                               <i class="fa fa-trash-o"></i>
+                                               <% end %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- End of Single Portflio 1 -->
+                            <% end %>
+                          </div>
+                        </div>
+                      </div>
+
+           <div class="contents">
+           <div class="row">
+                    <div class="col-md-12">
+                        <!-- Portfolio Items Start -->
+                        <div class="porfolio-items">
+                          <% @accessories.each do |m| %>
+                            <!-- Single Portflio 1 Start -->
+                            <div class="single-porfolio aroma">
+                                <div class="img text-center">
+                                    <% if m.service_image? %>
+                                     <%= image_tag m.service_image.thumb.url, :class => "img-responsive" %>
+                                    <% else %>
+                                     <%= image_tag 'noimage.gif' %>
+                                    <% end %>
+                                    <div class="porto-overlay"></div>
+                                    <div class="porto-body">
+                                        <div class="porto-text">
+                                            <h4><%= m.name %></h4>
+                                            <p><%= m.category %></p>
+                                        </div>
+                                        <div class="porto-icon">
+                                            <%= link_to service_path(m) do %>
+                                               <i class="fa fa-eye"></i>
+                                               <% end %>
+                                               <%= link_to edit_service_path(m) do %>
+                                               <i class="fa fa-pencil-square-o"></i>
+                                               <% end %>
+                                            <%= link_to service_path(m), method: :delete, data: {confirm: "この登録サービスを削除しますか？"} do %>
+                                               <i class="fa fa-trash-o"></i>
+                                               <% end %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- End of Single Portflio 1 -->
+                            <% end %>
+           </div>
+       </div>
+       </div>
+       </div>
+
+<div class="contents">
+<div class="row">
+                    <div class="col-md-12">
+                        <!-- Portfolio Items Start -->
+                        <div class="porfolio-items">
+                        <% @school.each do |m| %>
+                            <!-- Single Portflio 1 Start -->
+                            <div class="single-porfolio aroma">
+                                <div class="img text-center">
+                                    <% if m.service_image? %>
+                                     <%= image_tag m.service_image.thumb.url, :class => "img-responsive" %>
+                                    <% else %>
+                                     <%= image_tag 'noimage.gif' %>
+                                    <% end %>
+                                    <div class="porto-overlay"></div>
+                                    <div class="porto-body">
+                                        <div class="porto-text">
+                                            <h4><%= m.name %></h4>
+                                            <p><%= m.category %></p>
+                                        </div>
+                                        <div class="porto-icon">
+                                            <a href="treatment-detail.html">
+                                               <i class="fa fa-search-plus"></i> 
+                                            </a>
+                                            <a href="#">
+                                                <i class="fa fa-link"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- End of Single Portflio 1 -->
+                            <% end %>
+           </div>
+       </div>
+       </div>
+       </div>
+
+
+
+            </div> <!-- End of Container -->
+        </div>
+
+
+    </section>

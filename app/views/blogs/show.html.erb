@@ -1,0 +1,695 @@
+   <script>
+$(function (){
+$(".contents:gt(0)").css("display","none");
+
+$("#tab li").click(function() {
+var num = $("#tab li").index(this);
+$("#tab li").removeClass("now");
+$(this).addClass("now");
+
+$(".contents").css("display","none");
+$(".contents").eq(num).css("display","block");
+});
+});
+    </script>
+ 
+
+	
+    <!-- Header Section Start -->
+    <header id="treatment" class="top-area parallax" style="height: 200px;">
+        <!-- Header Area Start -->
+        <div class="header-area" >
+            <!-- Container Start -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="mainmenu">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span> 
+                                </button>
+                                <!-- Site Logo Start -->
+                                <div class="logo">
+                                    <%= link_to root_path do %><span>s</span>alon de Corron<% end %>
+                                </div>
+                            </div>
+                            <!-- Navbar Start -->
+                            <div class="collapse navbar-collapse" id="myNavbar">
+                                <div class="main-menu">
+                                    <ul class="nav navbar-nav">
+                                        <li class="active smooth-menu"><%= link_to "Home", :root %></li>
+                                        <li class="smooth-menu"><%= link_to "Services", :services %></li>
+                                        <li class="smooth-menu"><%= link_to "Blogs", :blogs %></li>
+                                        <li class="smooth-menu"><%= link_to "Contact", :inquiry %></li>
+                                    </ul>
+                                </div>
+                            </div> <!-- End of Navbar -->
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End of Header Text Area -->
+        </div> <!-- End of Header Text Area -->
+
+        <!-- Header Text Area Start -->
+        <div class="header-text-area sub text-left">
+            <div class="header-text-content">
+                <div class="container">
+                    <div class="row">
+                        <!-- Header Text -->
+                        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                            <div id="header-text" class="header-text">
+                                <h2 class=" wow fadeInDown" data-wow-duration="1.5s" data-wow-delay="1200ms">Corron Blogs</h2>
+                                <h3 class=" wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="600ms"></h3>
+                                <a href="" class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1800ms">home</a> > <a href="" class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1800ms">blog</a>
+                            </div>
+                        </div> <!-- End of Header Text -->
+                    </div> <!-- End of Row -->
+                </div> <!-- End of Container -->
+            </div> <!-- End of Header Text Content -->
+        </div> <!-- End of Header Text Area -->
+
+        <!-- Scroll Down Mouse Start -->
+        
+    </header>
+    <!-- End of Header Section -->
+    
+    <!-- Content Section Start -->
+    <section id="content">
+
+
+<!-- About Section Start -->
+        <div class="about" id="about">
+            <div class="container">
+                <!-- About Content Start -->
+                <div class="row about-content">
+                    <!-- About Left Start -->
+                    <div class="col-md-8 col-sm-8 col-xs-12">
+                        <div class="about-top">
+                            <h5><%= @blog.created_at %></h5><br><span class="tags"><%= @blog.label_list %></span><br><br>
+                            <h3><%= @blog.title %>
+                            </h3>
+                            <div class="col-md-7 col-sm-7 col-xs-12">
+                            <div class="img">
+                            <% if @blog.blogimage? %>
+                                    <%= image_tag @blog.blogimage.thumb.url, :class => "img-responsive" %>
+                                    <% else %>
+                                    <%= image_tag 'noimage.gif' %>
+                                    <% end %>
+                                    
+                            </div>
+                        </div>
+                            <p class="word-break"><%= simple_format(@blog.content) %></p>
+                        </div>
+                        <!--<div class="about-bottom">
+                            <div class="skillbar-group">
+                               
+                                <div class="skillbar" data-percent="65">
+                                    <span class="skillbar-title">PHP</span>
+                                    <p class="skillbar-bar"></p>
+                                    <span class="skill-bar-percent">65%</span>
+                                </div> 
+                                <div class="skillbar" data-percent="80">
+                                    <span class="skillbar-title">html</span>
+                                    <p class="skillbar-bar"></p>
+                                    <span class="skill-bar-percent">80%</span>
+                                </div> 
+                                <div class="skillbar" data-percent="70">
+                                    <span class="skillbar-title">bootstrap</span>
+                                    <p class="skillbar-bar"></p>
+                                    <span class="skill-bar-percent">70%</span>
+                                </div> 
+                                <div class="skillbar" data-percent="93">
+                                    <span class="skillbar-title">javascript</span>
+                                    <p class="skillbar-bar"></p>
+                                    <span class="skill-bar-percent">93%</span>
+                                </div> 
+                            </div>
+                        </div> -->
+                    </div> <!-- End of About Left -->
+                    <!-- About Right Column Start -->
+                    <div class="col-md-3 col-md-offset-1 col-sm-3 col-xs-12">
+                        <!-- About Right Start -->
+                        <div class="about-right">
+                        
+                                <!-- Service 0 Start -->
+                            <div class="service">
+                                <div class="content">
+                                <p class="trim-image-to-circle">
+                                </p>
+                                    <h4>salon de corron</h4>
+                                    <p>京都北町で大人の隠れ家サロンやってます。</p>
+                                    <ul>
+                                    <li>
+                                    <h4><a href="https://www.facebook.com/salondecorron/" class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="800ms" target="_blank"><i class="fa fa-facebook"></i></a>
+                                        <a href="" class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="800ms"><i class="fa fa-twitter"></i></a></h4>
+                                    </li>
+                                </ul>
+                                </div>
+                            </div> <!-- End of Service 0 -->
+
+                            <!-- Service 1 Start -->
+                            <div class="service">
+                                <div class="icon">
+                                    <i class="fa fa-rss" aria-hidden="true"></i> 
+                                </div>
+                                <div class="content">
+                                    <h4>最新記事</h4>
+                                    <ul>
+                                    <% @blogs.each do |m| %>
+                                    <li>
+                                    <%= link_to blog_path(m) do %>
+                                    <%= m.title %>
+                                    <% end %>
+                                    </li>
+                                    <% end %>
+                                    
+                                </ul>
+                                </div>
+                            </div> <!-- End of Service 1 -->
+                            <!-- Service 2 Start 
+                            <div class="service">
+                                <div class="icon">
+                                    <i class="fa fa-bookmark" aria-hidden="true"></i>
+                                </div>
+                                <div class="content">
+                                    <h4>カテゴリー</h4>
+                                    <ul>
+                                    <li>
+                                    <a href="" class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="800ms">home</a>
+        
+                                    </li>
+                                    <% @labels.each do |m| %>
+                                    <li>
+                                    <%= m.name %>
+                                    </li>
+                                    <% end %>
+
+                                </ul>
+                                </div>
+                            </div>  End of Service 2 -->
+                            
+                        </div> <!-- End of About Right -->
+                    </div>  <!-- End of About Right Column -->
+                </div> <!-- End of About Content -->
+            </div> <!-- End of Container -->
+        </div>
+        <!-- End of About Section --> 
+
+
+
+
+
+
+
+
+
+
+       
+        <!-- Contact Section Start -->
+        <div class="contact" id="contact">
+            <div class="overly"></div>
+            <div class="container">
+                <!-- Section Title Start -->
+                <div class="row text-center section-title">
+                    <div class="col-md-12">
+                        <h3>ご予約・お問い合わせ</h3>
+                        <div class="separator"></div>
+                    </div>
+                </div> <!-- End of Section Title -->
+                
+                <div class="row contact-sction">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="contact-form">
+                            <form action="" method="post">
+                                <div class="name">
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="お名前">
+                                </div>
+                                <div class="email">
+                                    <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                                </div>
+                                <div class="message">
+                                    <textarea name="message" id="message" class="form-control" cols="30" rows="10" placeholder="ご予約・お問い合わせ内容をご記入ください。"></textarea>
+                                </div>
+                                <div class="submit text-center">
+                                    <button type="submit">送信</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End of Container -->
+        </div>
+        <!-- End of Contact Section -->
+
+
+       <!-- Portfolio Section Start -->
+        <div class="portfolio" id="portfolio">
+            <div class="container">
+                <!-- Section Title Start -->
+                <!--<div class="row text-center section-title">
+
+                    <div class="col-md-12">
+                        <h3>our work</h3>
+                        <div class="separator"></div>
+                    </div>
+
+                </div>--> <!-- End of Section Title -->
+                <!-- Portfolio Filter Row Start -->
+                <div class="row">
+                    <div class="col-md-12">
+                    <div id="tab">
+                        <!-- Portfolio Filter Start -->
+                        <div class="portfolio-filter text-center">
+                        
+                            <ul class="nav">
+                                <li class="active now" data-filter="*">all</li>
+                                <li data-filter=".aroma">Aroma treatment</li>
+                                <li data-filter=".accessories">Accessories</li>
+                                <li data-filter=".school">School</li>
+                            </ul>
+                        
+                        </div> <!-- End of Portfolio Filter -->
+                        </div>
+                    </div>
+                </div> <!-- End of Portfolio Filter Row -->
+                <!-- Portfolio Items Row Start -->
+                <div class="contents">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Portfolio Items Start -->
+                        <div class="porfolio-items">
+                        <% @services.each do |m| %>
+                            <!-- Single Portflio 1 Start -->
+                            <div class="single-porfolio aroma">
+                                <div class="img text-center">
+                                    <img class="img-responsive" src="assets/hand.jpg" alt="portfolio image">
+                                    <div class="porto-overlay"></div>
+                                    <div class="porto-body">
+                                        <div class="porto-text">
+                                            <h4><%= m.name %></h4>
+                                            <p><%= m.category %></p>
+                                        </div>
+                                        <div class="porto-icon">
+                                            <%= link_to service_path(m) do %>
+                                               <i class="fa fa-arrow-circle-right"></i>
+                                               <% end %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- End of Single Portflio 1 -->
+                            <% end %>
+                            
+
+
+                        </div> <!-- End of Portfolio Items -->
+                    </div>
+                </div> <!-- End of Portfolio Items Row -->
+            </div>
+
+           <div class="contents">
+           <div class="row">
+                    <div class="col-md-12">
+                        <!-- Portfolio Items Start -->
+                        <div class="porfolio-items">
+                         <% @aroma.each do |m| %>
+                            <!-- Single Portflio 1 Start -->
+                            <div class="single-porfolio aroma">
+                                <div class="img text-center">
+                                    <img class="img-responsive" src="assets/hand.jpg" alt="portfolio image">
+                                    <div class="porto-overlay"></div>
+                                    <div class="porto-body">
+                                        <div class="porto-text">
+                                            <h4><%= m.name %></h4>
+                                            <p><%= m.category %></p>
+                                        </div>
+                                        <div class="porto-icon">
+                                           <%= link_to service_path(m) do %>
+                                               <i class="fa fa-arrow-circle-right"></i>
+                                               <% end %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- End of Single Portflio 1 -->
+                            <% end %>
+                          </div>
+                        </div>
+                      </div>
+
+           <div class="contents">
+           <div class="row">
+                    <div class="col-md-12">
+                        <!-- Portfolio Items Start -->
+                        <div class="porfolio-items">
+                          <% @accessories.each do |m| %>
+                            <!-- Single Portflio 1 Start -->
+                            <div class="single-porfolio aroma">
+                                <div class="img text-center">
+                                    <img class="img-responsive" src="assets/hand.jpg" alt="portfolio image">
+                                    <div class="porto-overlay"></div>
+                                    <div class="porto-body">
+                                        <div class="porto-text">
+                                            <h4><%= m.name %></h4>
+                                            <p><%= m.category %></p>
+                                        </div>
+                                        <div class="porto-icon">
+                                            <%= link_to service_path(m) do %>
+                                               <i class="fa fa-arrow-circle-right"></i>
+                                               <% end %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- End of Single Portflio 1 -->
+                            <% end %>
+           </div>
+       </div>
+       </div>
+       </div>
+
+<div class="contents">
+<div class="row">
+                    <div class="col-md-12">
+                        <!-- Portfolio Items Start -->
+                        <div class="porfolio-items">
+                        <% @school.each do |m| %>
+                            <!-- Single Portflio 1 Start -->
+                            <div class="single-porfolio aroma">
+                                <div class="img text-center">
+                                    <img class="img-responsive" src="assets/hand.jpg" alt="portfolio image">
+                                    <div class="porto-overlay"></div>
+                                    <div class="porto-body">
+                                        <div class="porto-text">
+                                            <h4><%= m.name %></h4>
+                                            <p><%= m.category %></p>
+                                        </div>
+                                        <div class="porto-icon">
+                                            <%= link_to service_path(m) do %>
+                                               <i class="fa fa-arrow-circle-right"></i>
+                                               <% end %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- End of Single Portflio 1 -->
+                            <% end %>
+           </div>
+       </div>
+       </div>
+       </div>
+
+
+
+            </div> <!-- End of Container -->
+        </div>
+
+
+        <!-- Blog Section Start -->
+        <div class="blog" id="blog">
+            <div class="testimonial-bg"></div>
+            <div class="container">
+                <!-- Section Title Start -->
+                <div class="row text-center section-title">
+                    <div class="col-md-12">
+                        <h3>Staff Blog</h3>
+                        <div class="separator"></div>
+                    </div>
+                </div> <!-- End of Section Title -->
+                <div class="row">
+                    <!-- Blog Group Start -->
+                    <div class="blog-group">
+                        <% @blogs.each do |m| %>
+                        <!-- Single Blog Column Start -->
+                        <div class="col-md-4">
+                            <!-- Single Blog 1 Start -->
+                            <div class="single-blog">
+                                <div class="img">
+                                <% if m.blogimage? %>
+                                    <%= image_tag m.blogimage.thumb.url, :class => "img-responsive" %>
+                                    <% else %>
+                                    <%= image_tag 'noimage.gif' %>
+                                    <% end %>
+                                </div>
+                                <span><%= m.created_at %></span>
+                                <%= link_to blog_path(m) do %><h4><%= m.title %></h4><% end %>
+                                <p class="margin-bottom"><%= m.content.truncate(20) %></p>
+                            </div> <!-- End of Single Blog 1 -->
+                        </div> <!-- End of Single Blog Column -->
+                        <% end %>
+                    </div> <!-- End of Blog Group -->
+                </div> <!-- End of Row -->
+            </div> <!-- End of Container -->
+        </div>
+        <!-- End of Blog Section -->
+
+    </section>
+    <!-- End of Content Section -->
+    
+
+
+ 
+     <script>
+    /* ---------------------------------------
+
+1 - Adjust Loading Page
+2 - Make Header takes the Full Height of the window
+3 - Color Switcher && Changing Colors
+4 - Sticky Menu
+5 - Start Slick Slider Plugin in Slider Section
+6 - About Section Skill Bars
+7 - Hide menu after clicking on a link
+8 - Jquery Smooth Scroll
+9 - jquery scroll spy
+10 - Parallax Effect
+11 - Start numbers animate at fun-facts section
+12 - Wow Js Active Jquery
+13 - Start Isotop Plugin in Portfolio Section
+14 - Start Owl Carousel Plugin in Client Section
+15 - Jquery Go Down Button
+
+--------------------------------------- */
+
+(function($) {
+
+    "use strict";
+
+    /* ---------------------------------------------------
+        1 - Adjust Loading Page
+    ----------------------------------------------------- */
+    $(window).on("load", function () {
+        $(".loading .loading-wrapper").delay(500).animate({
+                top: "-100%"
+        }, 1000, "easeInQuart");
+        $(".loading").delay(1100).fadeOut(1500);
+    });
+
+    /* ----------------------------------------------------------
+        2 - Make Header takes the Full Height of the window
+    ------------------------------------------------------------ */
+    var homeSec = $("#home");
+    homeSec.height($(window).height());
+
+    $(window).on("resize", function() {
+        homeSec.height($(window).height());
+    });
+ 
+ 
+    /* ---------------------------------------------------
+        4 - Sticky Menu
+    ----------------------------------------------------- */
+    $(".header-area").sticky({topSpacing:0});
+    
+    /* ---------------------------------------------------
+        5 - Start Slick Slider Plugin in Slider Section
+    ----------------------------------------------------- */
+    $(window).on("load", function () {
+        function heroSlider() {
+
+            function slideAnimation(elem) {
+                var animEndEv = 'webkitAnimationEnd animationend';
+                elem.each(function() {
+                    var $this = $(this),
+                    $animationType = $this.data('animation');
+
+                    $this.css('opacity', '1').addClass($animationType).one(animEndEv, function() {
+                    $this.removeClass($animationType);
+                    });
+                });
+            }
+            var $heroSlider = $('.hero-slider'),
+                $sliderContent = $('.hero-slider-content'),
+                $firstSlideAnimation = $heroSlider.find('.slice:first').find("[data-animation ^= 'animated']");
+
+            $heroSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+                var slide = $(slick.$slides.get(currentSlide));
+                var $caption = slide.find("[data-animation ^= 'animated']").css('opacity', '0');
+            });
+            $heroSlider.on('afterChange', function(event, slick, currentSlide, nextSlide) {
+                var slide = $(slick.$slides.get(currentSlide));
+                var $caption = slide.find("[data-animation ^= 'animated']");
+                slideAnimation($caption);
+            });
+
+            $(".hero-slider").slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                useCSS: true,
+                autoplay: true,
+                autoplaySpeed: 7000,
+                arrows: true,
+                cssEase: 'ease-in-out',
+                lazyLoad: 'progressive',
+                dots: false,
+                fade: true,
+                infinite: true,
+                pauseOnHover: false,
+                prevArrow: $('.prev'),
+                nextArrow: $('.next')
+            }); 
+
+            slideAnimation($firstSlideAnimation);
+        }
+
+        heroSlider();
+    });
+    
+    /* ---------------------------------------------------
+        6 - About Section Skill Bars  
+    ----------------------------------------------------- */
+    $(".about").appear(function () {
+          $(".skillbar").skillBars();
+    }, {
+          accX: 0,
+          accY: -350
+    });
+    
+    /* ---------------------------------------------------
+        7 - Hide menu after clicking on a link 
+    ----------------------------------------------------- */
+    $("ul.nav li a").on("click", function () {
+        $("#myNavbar").collapse("hide");
+    });
+
+    /* ---------------------------------------------------
+        8 - Jquery Smooth Scroll
+    ----------------------------------------------------- */
+    $("li.smooth-menu > a").on("click", function (event) {
+        var $anchor = $(this);
+        var headerH = '56';
+        $("html, body").stop().animate({
+            scrollTop : $($anchor.attr('href')).offset().top - headerH + "px"
+        }, 1200, 'easeInOutExpo');
+
+        event.preventDefault();
+    });       
+
+    /* ---------------------------------------------------
+        9 - jquery scroll spy
+    ----------------------------------------------------- */
+    $(window).on("scroll", function () {
+        $("body").scrollspy({
+            target: '.navbar-collapse',
+            offset: 94
+        }); 
+    });
+
+    /* ---------------------------------------------------
+        10 - Parallax Effect
+    ----------------------------------------------------- */
+    var parallaxHome        = $("#home.parallax"),
+        parallaxFacts       = $("#fun-facts.parallax"),
+        parallaxTest        = $("#client.parallax");
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+        parallaxHome.css({"background-attachment": "scroll"});
+        parallaxFacts.css({"background-attachment": "scroll"});
+        parallaxTest.css({"background-attachment": "scroll"});
+    } else {
+        parallaxHome.parallax("50%", 0.3);
+        parallaxFacts.parallax("50%", 0.3);
+        parallaxTest.parallax("50%", 0.2);
+    }
+    
+    /* ---------------------------------------------------
+        11 - Start numbers animate at fun-facts section 
+    ----------------------------------------------------- */
+    $(".fun-facts").appear(function () {
+          $(".timer").countTo();
+    }, {
+          accX: 0,
+          accY: -350
+    });
+
+    /* ---------------------------------------------------
+        12 - Wow Js Active Jquery
+    ----------------------------------------------------- */
+    var wow = new WOW(
+        {
+        boxClass:     'wow',      // animated element css class (default is wow)
+        animateClass: 'animated', // animation css class (default is animated)
+        offset:       0,          // distance to the element when triggering the animation (default is 0)
+        mobile:       true,       // trigger animations on mobile devices (default is true)
+        live:         true,       // act on asynchronously loaded content (default is true)
+        callback:     function(box) {
+        // the callback is fired every time an animation is started
+        // the argument that is passed in is the DOM node being animated
+        },
+        scrollContainer: null // optional scroll container selector, otherwise use window
+        }
+    );
+    wow.init();  
+    
+    /* ---------------------------------------------------
+        13 - Start Isotop Plugin in Portfolio Section
+    ----------------------------------------------------- */
+    //active isotop js
+    $('.porfolio-items').isotope({
+        itemSelector: '.single-porfolio',
+        layoutMode: 'fitRows',
+    });
+
+    //isoptop click function
+    $(".portfolio-filter > ul.nav > li").on("click", function () {
+        $(".portfolio-filter > ul.nav > li").removeClass("active");
+        $(this).addClass("active");
+
+        var selector = $(this).attr("data-filter");
+        $(".porfolio-items").isotope({
+            filter: selector,
+            animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+            }
+        });
+
+        return false;
+    });
+    
+    /* ---------------------------------------------------
+        14 - Start Owl Carousel Plugin in Client Section
+    ----------------------------------------------------- */
+    $(".client-group").owlCarousel({
+        navigation : false,
+        autoPlay: 3000,
+        slideSpeed : 1500,
+        pagination: true,
+        paginationSpeed : 1500,
+        singleItem: true 
+    });
+    
+    /* ---------------------------------------------------
+        15 - Jquery Go Down Button
+    ----------------------------------------------------- */
+    $("a.scroll-link").on("click", function (event) {
+        var $anchor = $(this);
+        var headerH = '56';
+        $("html, body").stop().animate({
+            scrollTop : $($anchor.attr('href')).offset().top - headerH + "px"
+        }, 1200, 'easeInOutExpo');
+
+        event.preventDefault();
+    });
+
+})(jQuery);
+
+
+    </script>

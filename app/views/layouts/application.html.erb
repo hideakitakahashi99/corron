@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Corron</title>
+    <%= csrf_meta_tags %>
+        <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="salon de Corron | Relax salon">
+    <meta name="keywords" content="">
+    <meta name="author" content="umu k.k.">
+        <!-- Site Title -->
+    <title>salon de Corron | Relax salon</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/images/favicons/favicon.png">
+    <link rel="apple-touch-icon" href="assets/images/favicons/apple-touch-icon.png">
+
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <script>
+$(function (){
+$(".contents:gt(0)").css("display","none");
+
+$("#tab li").click(function() {
+var num = $("#tab li").index(this);
+$("#tab li").removeClass("now");
+$(this).addClass("now");
+
+$(".contents").css("display","none");
+$(".contents").eq(num).css("display","block");
+});
+});
+    </script>
+ 
+
+  </head>
+
+  <body>
+     <!-- Start Loading Page --> 
+    <!--<div class="loading">
+        <div class="loading-wrapper">
+            <div class="loader"></div>
+            <h4>corron.. corron..</h4>
+        </div>
+    </div>-->
+    <!-- End of Loading Page -->
+    <%= yield %>
+       <!-- Footer Section Start -->
+    <footer id="footer">
+        <div class="container">
+            <!-- Footer Widgets Row Start -->
+            <div class="row">
+                <!-- Widgets 1 Start -->
+                <div class="col-md-4">
+                    <div class="footer-logo">
+                        <h3>salon de Corron</h3>
+                        <p>Lorem ipsum dolor sit amet, consetur adiping elit. Laudantium facere tenetur corrupti blanditiis aperiam nulla dolorum aliquam exercinem odit, maiores.</p>
+                        
+                    </div>
+                </div> <!-- End of Widgets 1 -->
+                
+                <!-- Widgets 2 Start -->
+                <div class="col-md-2">
+                    <div class="service-links">
+                        <h3>menu</h3>
+                        <div class="service-link">
+                        <%= link_to 'サービス一覧', services_path %>
+                        <%= link_to 'スタッフブログ', blogs_path %>
+                        </div>
+                    </div>
+                </div> <!-- End of Widgets 2 -->
+                
+               
+                
+                
+            </div> <!-- End of Footer Widgets Row -->
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="social-link">
+                        <a href="https://www.facebook.com/salondecorron/"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                    </div> <!-- End of Social Link -->
+                    <div class="copyright">
+                        <p>copyright &copy; 2017 salon de Corron, all right reserved. </p>
+                    </div>
+                </div>
+            </div> 
+        </div> <!-- End of Container -->
+    </footer>
+    <!-- End of Footer Section -->
+
+  </body>
+</html>

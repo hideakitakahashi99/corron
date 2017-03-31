@@ -1,0 +1,78 @@
+        <section id="content">
+
+
+        <!-- Contact Section Start -->
+        <div class="contact" id="contact">
+            <div class="overly"></div>
+            <div class="container">
+                <!-- Section Title Start -->
+                <div class="row text-center section-title">
+                    <div class="col-md-12">
+                        <h3>ご予約・お問い合わせ</h3>
+                        <div class="separator"></div>
+                    </div>
+                </div> <!-- End of Section Title -->
+                <!-- Address Section Start -->
+                <div class="row address">
+                    <!-- Address 1 Start -->
+                    <div class="col-md-4 text-center">
+                        <div class="addrs">
+                            <i class="fa fa-map-marker"></i>
+                            <h4>address</h4>
+                            <p>〒602-8392 京都市上京区御前通今出川上る北町638-21</p>
+                        </div>
+                    </div> <!-- End of Address 1 -->
+                    <!-- Address 2 Start -->
+                    <div class="col-md-4 text-center">
+                        <div class="addrs">
+                            <i class="fa fa-phone"></i>
+                            <h4>tell</h4>
+                            <p>090-5168-8882</p>
+                        </div>
+                    </div> <!-- End of Address 2 -->
+                    <!-- Address 3 Start -->
+                    <div class="col-md-4 text-center">
+                        <div class="addrs">
+                            <i class="fa fa-envelope"></i>
+                            <h4>e-mail</h4>
+                            <p class="mail">cocoroco.corron@gmail.com</p>
+                        </div>
+                    </div> <!-- End of Address 3 -->
+                </div> <!-- End of Address Section -->
+                <%= form_for @inquiry, :url => inquiry_confirm_path do |f| %>
+                <% if @inquiry.errors.any? %>
+      <strong>入力内容にエラーがあります</strong>
+      <ul>
+        <% @inquiry.errors.each do |attr, msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+      <% end %>
+                <div class="row contact-sction">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="contact-form">
+                            <form action="" method="post">
+                                <div class="name">
+                                <%= f.text_field :name, :id => "name", :class => "form-control", :placeholder => "お名前" %>
+                                </div>
+                                <div class="email">
+                                <%= f.text_field :email, :id => "email", :class => "form-control", :placeholder => "Email"  %>
+                                </div>
+                                <div class="message">
+                                <%= f.text_area :message, :id => "message", :class => "form-control", :size => "30x10", :placeholder => "ご予約・お問い合わせ内容をご記入ください。"   %>
+
+                                </div>
+                                <div class="submit text-center">
+                                    <%= f.submit '確認', :class => "submit" %>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <% end %>
+            </div> <!-- End of Container -->
+        </div>
+        <!-- End of Contact Section -->
+        
+    </section>
+    <!-- End of Content Section -->

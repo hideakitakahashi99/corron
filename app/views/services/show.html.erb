@@ -1,0 +1,380 @@
+   <script>
+$(function (){
+$(".contents:gt(0)").css("display","none");
+
+$("#tab li").click(function() {
+var num = $("#tab li").index(this);
+$("#tab li").removeClass("now");
+$(this).addClass("now");
+
+$(".contents").css("display","none");
+$(".contents").eq(num).css("display","block");
+});
+});
+    </script>
+ 
+
+
+
+    <!-- Header Section Start -->
+    <header id="treatment" class="top-area parallax" style="height: 200px;">
+        <!-- Header Area Start -->
+        <div class="header-area" >
+            <!-- Container Start -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="mainmenu">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span> 
+                                </button>
+                                <!-- Site Logo Start -->
+                                <div class="logo">
+                                    <%= link_to root_path do %><span>s</span>alon de Corron<% end %>
+                                </div>
+                            </div>
+                            <!-- Navbar Start -->
+                            <div class="collapse navbar-collapse" id="myNavbar">
+                                <div class="main-menu">
+                                    <ul class="nav navbar-nav">
+                                        <li class="active smooth-menu"><%= link_to "Home", :root %></li>
+                                        <li class="smooth-menu"><%= link_to "Services", :services %></li>
+                                        <li class="smooth-menu"><%= link_to "Blogs", :blogs %></li>
+                                        <li class="smooth-menu"><%= link_to "Contact", :inquiry %></li>
+                                    </ul>
+                                </div>
+                            </div> <!-- End of Navbar -->
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End of Header Text Area -->
+        </div> <!-- End of Header Text Area -->
+
+        <!-- Header Text Area Start -->
+        <div class="header-text-area sub text-left">
+            <div class="header-text-content">
+                <div class="container">
+                    <div class="row">
+                        <!-- Header Text -->
+                        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                            <div id="header-text" class="header-text">
+                                <h2 class=" wow fadeInDown" data-wow-duration="1.5s" data-wow-delay="1200ms">Corron's Service menu</h2>
+                                <h3 class=" wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="600ms"></h3>
+                                <a href="" class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1800ms">home</a> > <a href="" class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1800ms">menu</a>
+                            </div>
+                        </div> <!-- End of Header Text -->
+                    </div> <!-- End of Row -->
+                </div> <!-- End of Container -->
+            </div> <!-- End of Header Text Content -->
+        </div> <!-- End of Header Text Area -->
+
+        <!-- Scroll Down Mouse Start -->
+        
+    </header>
+    <!-- End of Header Section -->
+    
+    <!-- Content Section Start -->
+    <section id="content">
+
+
+
+        <!-- About Section Start -->
+        <div class="about" id="about">
+            <div class="container">
+                <!-- About Content Start -->
+                <div class="row about-content">
+                    <!-- About Left Start -->
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                       <!-- Single Blog Column Start -->
+                                                    <!-- Single Blog 1 Start -->
+                            <div class="single-blog">
+                                <div class="img">
+                                    <img src="assets/images/hand.jpg" alt="blog image" class="img-responsive">
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consetur adisicing elit. Suscipit quam molestias ad ea veritatis voluptates quam molestias.</p>
+                            </div> <!-- End of Single Blog 1 -->
+                        <!-- End of Single Blog Column -->
+
+
+
+
+                        
+                        <!--<div class="about-bottom">
+                            <div class="skillbar-group">
+                               
+                                <div class="skillbar" data-percent="65">
+                                    <span class="skillbar-title">PHP</span>
+                                    <p class="skillbar-bar"></p>
+                                    <span class="skill-bar-percent">65%</span>
+                                </div> 
+                                <div class="skillbar" data-percent="80">
+                                    <span class="skillbar-title">html</span>
+                                    <p class="skillbar-bar"></p>
+                                    <span class="skill-bar-percent">80%</span>
+                                </div> 
+                                <div class="skillbar" data-percent="70">
+                                    <span class="skillbar-title">bootstrap</span>
+                                    <p class="skillbar-bar"></p>
+                                    <span class="skill-bar-percent">70%</span>
+                                </div> 
+                                <div class="skillbar" data-percent="93">
+                                    <span class="skillbar-title">javascript</span>
+                                    <p class="skillbar-bar"></p>
+                                    <span class="skill-bar-percent">93%</span>
+                                </div> 
+                            </div>
+                        </div> -->
+                    </div> <!-- End of About Left -->
+                    <!-- About Right Column Start -->
+                    <div class="col-md-5 col-md-offset-1 col-sm-6 col-xs-12">
+                        <div class="about-top">
+                            <h5><%= @service.category %></h5><br>
+                            <h3><strong><%= @service.name %></strong><br><br><strong><%= @service.price %>yen</strong>
+                            </h3>
+                            <p><%= simple_format(@service.content) %></p>
+                        </div>
+                    </div>  <!-- End of About Right Column -->
+                </div> <!-- End of About Content -->
+            </div> <!-- End of Container -->
+        </div>
+        <!-- End of About Section --> 
+
+        <!-- Contact Section Start -->
+        <div class="contact" id="contact">
+            <div class="overly"></div>
+            <div class="container">
+                <!-- Section Title Start -->
+                <div class="row text-center section-title">
+                    <div class="col-md-12">
+                        <h3>ご予約・お問い合わせ</h3>
+                        <div class="separator"></div>
+                    </div>
+                </div> <!-- End of Section Title -->
+                
+                <div class="row contact-sction">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="contact-form">
+                            <form action="" method="post">
+                                <div class="name">
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="お名前">
+                                </div>
+                                <div class="email">
+                                    <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                                </div>
+                                <div class="message">
+                                    <textarea name="message" id="message" class="form-control" cols="30" rows="10" placeholder="ご予約・お問い合わせ内容をご記入ください。"></textarea>
+                                </div>
+                                <div class="submit text-center">
+                                    <button type="submit">送信</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End of Container -->
+        </div>
+        <!-- End of Contact Section -->
+
+ <!-- Portfolio Section Start -->
+        <div class="portfolio" id="portfolio">
+            <div class="container">
+                <!-- Section Title Start -->
+                <!--<div class="row text-center section-title">
+
+                    <div class="col-md-12">
+                        <h3>our work</h3>
+                        <div class="separator"></div>
+                    </div>
+
+                </div>--> <!-- End of Section Title -->
+                <!-- Portfolio Filter Row Start -->
+                <div class="row">
+                    <div class="col-md-12">
+                    <div id="tab">
+                        <!-- Portfolio Filter Start -->
+                        <div class="portfolio-filter text-center">
+                        
+                            <ul class="nav">
+                                <li class="active now" data-filter="*">all</li>
+                                <li data-filter=".aroma">Aroma treatment</li>
+                                <li data-filter=".accessories">Accessories</li>
+                                <li data-filter=".school">School</li>
+                            </ul>
+                        
+                        </div> <!-- End of Portfolio Filter -->
+                        </div>
+                    </div>
+                </div> <!-- End of Portfolio Filter Row -->
+                <!-- Portfolio Items Row Start -->
+                <div class="contents">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Portfolio Items Start -->
+                        <div class="porfolio-items">
+                        <% @services.each do |m| %>
+                            <!-- Single Portflio 1 Start -->
+                            <div class="single-porfolio aroma">
+                                <div class="img text-center">
+                                    <img class="img-responsive" src="assets/hand.jpg" alt="portfolio image">
+                                    <div class="porto-overlay"></div>
+                                    <div class="porto-body">
+                                        <div class="porto-text">
+                                            <h4><%= m.name %></h4>
+                                            <p><%= m.category %></p>
+                                        </div>
+                                        <div class="porto-icon">
+                                            <%= link_to service_path(m) do %>
+                                               <i class="fa fa-arrow-circle-right"></i>
+                                               <% end %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- End of Single Portflio 1 -->
+                            <% end %>
+
+
+
+                        </div> <!-- End of Portfolio Items -->
+                    </div>
+                </div> <!-- End of Portfolio Items Row -->
+            </div>
+
+           <div class="contents">
+           <div class="row">
+                    <div class="col-md-12">
+                        <!-- Portfolio Items Start -->
+                        <div class="porfolio-items">
+                         <% @aroma.each do |m| %>
+                            <!-- Single Portflio 1 Start -->
+                            <div class="single-porfolio aroma">
+                                <div class="img text-center">
+                                    <img class="img-responsive" src="assets/hand.jpg" alt="portfolio image">
+                                    <div class="porto-overlay"></div>
+                                    <div class="porto-body">
+                                        <div class="porto-text">
+                                            <h4><%= m.name %></h4>
+                                            <p><%= m.category %></p>
+                                        </div>
+                                        <div class="porto-icon">
+                                           <%= link_to service_path(m) do %>
+                                               <i class="fa fa-arrow-circle-right"></i>
+                                               <% end %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- End of Single Portflio 1 -->
+                            <% end %>
+                          </div>
+                        </div>
+                      </div>
+
+           <div class="contents">
+           <div class="row">
+                    <div class="col-md-12">
+                        <!-- Portfolio Items Start -->
+                        <div class="porfolio-items">
+                          <% @accessories.each do |m| %>
+                            <!-- Single Portflio 1 Start -->
+                            <div class="single-porfolio aroma">
+                                <div class="img text-center">
+                                    <img class="img-responsive" src="assets/hand.jpg" alt="portfolio image">
+                                    <div class="porto-overlay"></div>
+                                    <div class="porto-body">
+                                        <div class="porto-text">
+                                            <h4><%= m.name %></h4>
+                                            <p><%= m.category %></p>
+                                        </div>
+                                        <div class="porto-icon">
+                                            <%= link_to service_path(m) do %>
+                                               <i class="fa fa-arrow-circle-right"></i>
+                                               <% end %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- End of Single Portflio 1 -->
+                            <% end %>
+           </div>
+       </div>
+       </div>
+       </div>
+
+<div class="contents">
+<div class="row">
+                    <div class="col-md-12">
+                        <!-- Portfolio Items Start -->
+                        <div class="porfolio-items">
+                        <% @school.each do |m| %>
+                            <!-- Single Portflio 1 Start -->
+                            <div class="single-porfolio aroma">
+                                <div class="img text-center">
+                                    <img class="img-responsive" src="assets/hand.jpg" alt="portfolio image">
+                                    <div class="porto-overlay"></div>
+                                    <div class="porto-body">
+                                        <div class="porto-text">
+                                            <h4><%= m.name %></h4>
+                                            <p><%= m.category %></p>
+                                        </div>
+                                        <div class="porto-icon">
+                                            <%= link_to service_path(m) do %>
+                                               <i class="fa fa-arrow-circle-right"></i>
+                                               <% end %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- End of Single Portflio 1 -->
+                            <% end %>
+           </div>
+       </div>
+       </div>
+       </div>
+
+
+
+            </div> <!-- End of Container -->
+        </div>
+
+
+        <!-- Blog Section Start -->
+        <div class="blog" id="blog">
+            <div class="testimonial-bg"></div>
+            <div class="container">
+                <!-- Section Title Start -->
+                <div class="row text-center section-title">
+                    <div class="col-md-12">
+                        <h3>Staff Blog</h3>
+                        <div class="separator"></div>
+                    </div>
+                </div> <!-- End of Section Title -->
+                <div class="row">
+                    <!-- Blog Group Start -->
+                    <div class="blog-group">
+                        <% @blogs.each do |m| %>
+                        <!-- Single Blog Column Start -->
+                        <div class="col-md-4">
+                            <!-- Single Blog 1 Start -->
+                            <div class="single-blog">
+                                <div class="img">
+                                <% if m.blogimage? %>
+                                    <%= image_tag m.blogimage.thumb.url, :class => "img-responsive" %>
+                                    <% else %>
+                                    <%= image_tag 'noimage.gif' %>
+                                    <% end %>
+                                </div>
+                                <span><%= m.created_at %></span>
+                                <%= link_to blog_path(m) do %><h4><%= m.title %></h4><% end %>
+                                <p class="margin-bottom"><%= m.content.truncate(20) %></p>
+                            </div> <!-- End of Single Blog 1 -->
+                        </div> <!-- End of Single Blog Column -->
+                        <% end %>
+                    </div> <!-- End of Blog Group -->
+                </div> <!-- End of Row -->
+            </div> <!-- End of Container -->
+        </div>
+        <!-- End of Blog Section -->
+
+
+    </section>
+    <!-- End of Content Section -->

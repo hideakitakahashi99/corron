@@ -1,0 +1,58 @@
+
+
+                <!-- Section Title Start -->
+                <div class="row text-center section-title">
+                    <div class="col-md-12">
+                        <h3>サービス登録</h3>
+                        <div class="separator"></div>
+                    </div>
+                </div> <!-- End of Section Title -->
+                <%= form_for(@service) do |f| %>
+                <% if @service.errors.any? %>
+      <strong>入力内容にエラーがあります</strong>
+      <ul>
+        <% @service.errors.each do |attr, msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+      <% end %>
+                <div class="row contact-sction">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="contact-form">
+                            <form action="" method="post">
+                            <div class="name">
+                            <%= f.select :category, Service::SERVICE_NAMES, prompt: 'サービスカテゴリーをお選び下さい。'%>
+                            </div><br><br>
+
+                                <div class="name">
+                                <%= f.text_field :name, :id => "name", :class => "form-control", :placeholder => "サービス名", :size => "50" %>
+
+                                </div>
+
+                                <div>
+                                 <%= image_tag @service.service_image.thumb.url if @service.service_image? %>
+                                 <%= f.file_field :service_image, :class => "form-control" %> 
+                                 <%= f.hidden_field :service_image_cache %>
+                                </div><br>
+                                <div class="name">
+                                <%= f.text_field :price, :id => "name", :class => "form-control", :placeholder => "料金（半角数字　単位/円）" %>
+
+                                </div>
+
+
+                                <div class="message">
+                                <%= f.text_area :content, :id => "message", :class => "form-control", :size => "80x10", :placeholder => "サービスの詳細をご記入ください。（改行可）"%>
+                                </div>
+
+
+
+<br>
+                                <div class="submit text-center">
+                                    <%= f.submit 'サービス登録', :class => "submit" %>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <% end %>
+   
