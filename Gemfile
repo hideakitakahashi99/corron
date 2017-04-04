@@ -61,3 +61,6 @@ gem "font-awesome-rails"
 gem 'carrierwave'
 gem 'rmagick'
 gem 'jquery-turbolinks'
+group :production, :staging do
+    gem 'unicorn'
+end

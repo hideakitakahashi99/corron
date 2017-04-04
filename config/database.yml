@@ -31,3 +31,4 @@ production:
   database: corron
   username: root
   password: ht641299
+  host: corron.cktz5takxepi.ap-northeast-1.rds.amazonaws.com
