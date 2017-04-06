@@ -64,3 +64,4 @@ gem 'jquery-turbolinks'
 group :production, :staging do
     gem 'unicorn'
 end
+gem 'yui-compressor'

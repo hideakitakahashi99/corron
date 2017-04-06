@@ -92,9 +92,12 @@ $(".contents").eq(num).css("display","block");
                                                     <!-- Single Blog 1 Start -->
                             <div class="single-blog">
                                 <div class="img">
-                                    <img src="assets/images/hand.jpg" alt="blog image" class="img-responsive">
+                                    <% if @service.service_image? %>
+                                    <%= image_tag @service.service_image.thumb.url, :class => "img-responsive" %>
+                                    <% else %>
+                                    <%= image_tag 'noimage.gif' %>
+                                    <% end %>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet, consetur adisicing elit. Suscipit quam molestias ad ea veritatis voluptates quam molestias.</p>
                             </div> <!-- End of Single Blog 1 -->
                         <!-- End of Single Blog Column -->
 
@@ -218,7 +221,11 @@ $(".contents").eq(num).css("display","block");
                             <!-- Single Portflio 1 Start -->
                             <div class="single-porfolio aroma">
                                 <div class="img text-center">
-                                    <img class="img-responsive" src="assets/hand.jpg" alt="portfolio image">
+                                    <% if m.service_image? %>
+                                    <%= image_tag m.service_image.thumb.url, :class => "img-responsive" %>
+                                    <% else %>
+                                    <%= image_tag 'noimage.gif' %>
+                                    <% end %>
                                     <div class="porto-overlay"></div>
                                     <div class="porto-body">
                                         <div class="porto-text">
@@ -251,7 +258,11 @@ $(".contents").eq(num).css("display","block");
                             <!-- Single Portflio 1 Start -->
                             <div class="single-porfolio aroma">
                                 <div class="img text-center">
-                                    <img class="img-responsive" src="assets/hand.jpg" alt="portfolio image">
+                                    <% if m.service_image? %>
+                                    <%= image_tag m.service_image.thumb.url, :class => "img-responsive" %>
+                                    <% else %>
+                                    <%= image_tag 'noimage.gif' %>
+                                    <% end %>
                                     <div class="porto-overlay"></div>
                                     <div class="porto-body">
                                         <div class="porto-text">
@@ -280,7 +291,11 @@ $(".contents").eq(num).css("display","block");
                             <!-- Single Portflio 1 Start -->
                             <div class="single-porfolio aroma">
                                 <div class="img text-center">
-                                    <img class="img-responsive" src="assets/hand.jpg" alt="portfolio image">
+                                    <% if m.service_image? %>
+                                    <%= image_tag m.service_image.thumb.url, :class => "img-responsive" %>
+                                    <% else %>
+                                    <%= image_tag 'noimage.gif' %>
+                                    <% end %>
                                     <div class="porto-overlay"></div>
                                     <div class="porto-body">
                                         <div class="porto-text">
@@ -310,7 +325,11 @@ $(".contents").eq(num).css("display","block");
                             <!-- Single Portflio 1 Start -->
                             <div class="single-porfolio aroma">
                                 <div class="img text-center">
-                                    <img class="img-responsive" src="assets/hand.jpg" alt="portfolio image">
+                                    <% if m.service_image? %>
+                                    <%= image_tag m.service_image.thumb.url, :class => "img-responsive" %>
+                                    <% else %>
+                                    <%= image_tag 'noimage.gif' %>
+                                    <% end %>
                                     <div class="porto-overlay"></div>
                                     <div class="porto-body">
                                         <div class="porto-text">

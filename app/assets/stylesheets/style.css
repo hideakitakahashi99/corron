@@ -51,7 +51,7 @@ body {
     font-weight: 400;
     line-height: 1.5em;
     background-attachment: fixed;
-    background-image: url("/assets/upfeathers.png");
+    background-image: url(/assets/upfeathers.png);
 }
 a, a:hover, a:focus {
     outline: none;
@@ -96,14 +96,14 @@ img {
     font-weight: 300;
 }
 .separator {
-    background-color: #1abc9c;
+    background-color: #f27768;
     border-radius: 3px;
     height: 3px;
     margin: 0 auto;
     width: 70px;
 }
 .separator1 {
-    background-color: #1abc9c;
+    background-color: #f27768;
     border-radius: 3px;
     height: 3px;
     margin-bottom: 20px;
@@ -308,7 +308,7 @@ img {
     /*text-transform: capitalize;*/
 }
 .header-area .logo a span {
-    color: #c5c5c5;
+    color: #f27768;
     font-size: 24px;
     font-weight: 900;
     text-transform: capitalize;
@@ -354,7 +354,7 @@ img {
     width: auto;
 }
 .is-sticky .header-area .logo a span {
-    color: #1abc9c;
+    color: #f27768;
     font-size: 24px;
     padding: 2px 0;
     width: auto;
@@ -423,7 +423,7 @@ img {
     transition: all .7s;
 }
 .header-btn2:hover {
-    background-color: #3498db;
+    background-color: #f27768;
     color: #fff;
 }
 
@@ -597,14 +597,14 @@ kenburns-2 {
     letter-spacing: 0.10em;
     text-transform: uppercase;
     border: 0;
-    background-color: rgba(82, 109, 250, 0.7);
+    background-color: rgba(242, 119, 104, 0.7);
     text-decoration: none;
     color: white;
     opacity: 0;
 }
 .hero-slider-btn:hover {
     color: #fff;
-    background-color: rgba(82, 109, 250, 1);
+    background-color: rgba(242, 119, 104, 1);
 }
 .slick-arrow.slick-hidden {
     display: none;
@@ -754,7 +754,7 @@ kenburns-2 {
     transition: all .7s;
 }
 .about .about-top a:hover {
-    background-color: #1abc9c;
+    background-color: #f27768;
 }
 .about .about-bottom .skillbar {
     position: relative;
@@ -807,7 +807,7 @@ kenburns-2 {
     width: 10%;
 }
 .about .about-right .service .icon i.fa {
-    color: #3498db;
+    color: #f27768;
     font-size: 24px;
 }
 .about .about-right .service .content {
@@ -851,7 +851,7 @@ kenburns-2 {
 }
 .fun-facts .fact span.timer {
     display: block;
-    color: #1abc9c;
+    color: #f27768;
     font-size: 32px;
     line-height: 1;
     min-height: 40px;
@@ -893,7 +893,7 @@ kenburns-2 {
 }
 .portfolio-filter > .nav > li.active,
 .portfolio-filter > .nav > li:hover {
-    color: #1abc9c;
+    color: #f27768;
 }
 .portfolio .porfolio-items {}
 .portfolio .porfolio-items .single-porfolio {
@@ -988,7 +988,7 @@ kenburns-2 {
 .portfolio .porfolio-items .single-porfolio .img .porto-body .porto-icon a i.fa {
     background: #fff none repeat scroll 0 0;
     border-radius: 20px;
-    color: #1abc9c;
+    color: #f27768;
     font-size: 16px;
     height: 35px;
     opacity: 0;
@@ -1020,7 +1020,7 @@ kenburns-2 {
 .process-area .process-wrapper {
 }
 .process-area .single-process span {
-    color: #526dfa;
+    color: #f27768;
     display: block;
     font-size: 40px;
     font-weight: 300;
@@ -1061,7 +1061,7 @@ kenburns-2 {
     
 }
 .client .single-client i.fa {
-    color: #526dfa;
+    color: #f27768;
     font-size: 36px;
     margin-bottom: 20px;
 }
@@ -1070,7 +1070,7 @@ kenburns-2 {
     margin-bottom: 30px;
 }
 .client .single-client .client-img img {
-    border: 5px solid #526dfa;
+    border: 5px solid #f27768;
     border-radius: 100%;
     height: 120px;
     margin-bottom: 20px;
@@ -1082,7 +1082,7 @@ kenburns-2 {
     text-transform: capitalize;
 }
 .client .single-client span {
-    color: #526dfa;
+    color: #f27768;
     font-size: 14px;
     text-transform: capitalize;
 }
@@ -1095,7 +1095,7 @@ kenburns-2 {
     -moz-border-radius: 0px;
     border-radius: 0px;
     background: none;
-    border: 3px solid #526dfa;
+    border: 3px solid #f27768;
 }
 .client .owl-theme .owl-controls .owl-page.active span, .owl-theme .owl-controls.clickable .owl-page:hover span {
     background: #fff none repeat scroll 0 0;
@@ -1116,7 +1116,7 @@ kenburns-2 {
 }
 .blog .single-blog {}
 .blog .single-blog span {
-    color: #526dfa;
+    color: #f27768;
     display: block;
     font-size: 12px;
     letter-spacing: 1px;
@@ -1135,7 +1135,7 @@ kenburns-2 {
     12. Start Promo Section 
 ----------------------------------*/
 .promo {
-    background-color: #526dfa;
+    background-color: #f27768;
     padding: 50px 0;
 }
 .promo h3 {
@@ -1159,7 +1159,7 @@ kenburns-2 {
     padding: 40px 0;
 }
 .contact .addrs i.fa {
-    color: #1abc9c;
+    color: #f27768;
     font-size: 32px;
     margin-bottom: 20px;
 }
@@ -1216,8 +1216,8 @@ kenburns-2 {
     padding: 20px 20px;
 }
 .contact .submit button {
-    background-color: #526dfa;
-    border: 1px solid #526dfa;
+    background-color: #f27768;
+    border: 1px solid #f27768;
     color: #fff;
     font-size: 14px;
     font-weight: 700;
@@ -1231,8 +1231,8 @@ kenburns-2 {
 }
 .contact .submit button:hover {
     background-color: #fff;
-    border: 1px solid #526dfa;
-    color: #526dfa;
+    border: 1px solid #f27768;
+    color: #f27768;
 }
 /* End of Contact Section */
 
@@ -1277,7 +1277,7 @@ kenburns-2 {
     text-transform: capitalize;
 }
 #footer .footer-logo .newsletter button {
-	background-color: #526dfa;
+	background-color: #f27768;
     border-radius: 5px;
 	color: #fff;
 	display: block;
@@ -1312,7 +1312,7 @@ kenburns-2 {
     transition: all .7s; 
 }
 #footer .service-links .service-link a:hover {
-    color: #526dfa;
+    color: #f27768;
 }
 #footer .useful-links {}
 #footer .useful-links h3 {
@@ -1339,7 +1339,7 @@ kenburns-2 {
     transition: all .7s; 
 }
 #footer .useful-links .footer-link a:hover {
-    color: #526dfa;
+    color: #f27768;
 }
 #footer .flickr-gallery {}
 #footer .flickr-gallery h3 {
@@ -1373,7 +1373,7 @@ kenburns-2 {
     transition: all .7s; 
 }
 #footer .social-link a i.fa:hover {
-    color: #526dfa;
+    color: #f27768;
 }
 #footer .copyright p {
     color: #f1f1f1;
@@ -1382,7 +1382,7 @@ kenburns-2 {
     text-transform: capitalize;
 }
 #footer .copyright p a {
-    color: #526dfa;
+    color: #f27768;
     font-weight: 700;
 }
 /* End of Footer Section */
