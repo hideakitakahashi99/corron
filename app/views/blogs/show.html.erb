@@ -16,7 +16,7 @@ $(".contents").eq(num).css("display","block");
 
 	
     <!-- Header Section Start -->
-    <header id="treatment" class="top-area parallax" style="height: 200px;">
+    <header id="treatment" class="top-area parallax" style="height: 300px;">
         <!-- Header Area Start -->
         <div class="header-area" >
             <!-- Container Start -->
@@ -284,7 +284,11 @@ $(".contents").eq(num).css("display","block");
                             <!-- Single Portflio 1 Start -->
                             <div class="single-porfolio aroma">
                                 <div class="img text-center">
-                                    <img class="img-responsive" src="assets/hand.jpg" alt="portfolio image">
+                                    <% if m.service_image? %>
+                                    <%= image_tag m.service_image.thumb.url, :class => "img-responsive" %>
+                                    <% else %>
+                                    <%= image_tag 'noimage.gif' %>
+                                    <% end %>
                                     <div class="porto-overlay"></div>
                                     <div class="porto-body">
                                         <div class="porto-text">
@@ -317,7 +321,11 @@ $(".contents").eq(num).css("display","block");
                             <!-- Single Portflio 1 Start -->
                             <div class="single-porfolio aroma">
                                 <div class="img text-center">
-                                    <img class="img-responsive" src="assets/hand.jpg" alt="portfolio image">
+                                    <% if m.service_image? %>
+                                    <%= image_tag m.service_image.thumb.url, :class => "img-responsive" %>
+                                    <% else %>
+                                    <%= image_tag 'noimage.gif' %>
+                                    <% end %>
                                     <div class="porto-overlay"></div>
                                     <div class="porto-body">
                                         <div class="porto-text">
@@ -346,7 +354,11 @@ $(".contents").eq(num).css("display","block");
                             <!-- Single Portflio 1 Start -->
                             <div class="single-porfolio aroma">
                                 <div class="img text-center">
-                                    <img class="img-responsive" src="assets/hand.jpg" alt="portfolio image">
+                                    <% if m.service_image? %>
+                                    <%= image_tag m.service_image.thumb.url, :class => "img-responsive" %>
+                                    <% else %>
+                                    <%= image_tag 'noimage.gif' %>
+                                    <% end %>
                                     <div class="porto-overlay"></div>
                                     <div class="porto-body">
                                         <div class="porto-text">
@@ -376,7 +388,11 @@ $(".contents").eq(num).css("display","block");
                             <!-- Single Portflio 1 Start -->
                             <div class="single-porfolio aroma">
                                 <div class="img text-center">
-                                    <img class="img-responsive" src="assets/hand.jpg" alt="portfolio image">
+                                    <% if m.service_image? %>
+                                    <%= image_tag m.service_image.thumb.url, :class => "img-responsive" %>
+                                    <% else %>
+                                    <%= image_tag 'noimage.gif' %>
+                                    <% end %>
                                     <div class="porto-overlay"></div>
                                     <div class="porto-body">
                                         <div class="porto-text">

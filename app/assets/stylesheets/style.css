@@ -373,7 +373,7 @@ img {
 
 .header-text-area.sub {
     display: table;
-    height: 250px;
+    height: 300px;
     left: 0;
     position: absolute;
     top: 0;
@@ -446,7 +446,7 @@ img {
 }
 .mainmenu ul.nav.navbar-nav > li:hover > a {
     background: none;
-    color: #000;
+    color: #f27768;
 }
 .mainmenu ul.nav.navbar-nav > li > a:focus {
     background: none;
