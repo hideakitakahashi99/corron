@@ -3,6 +3,7 @@ class ServicesController < ApplicationController
         @services = Service.order(created_at: :desc)
         @aroma = Service.where(category: 'Aroma_Teatment')
         @accessories = Service.where(category: 'Accessories')
+        @goods = Service.where(category: 'Goods')
         @school = Service.where(category: 'School')
         @inquiry = Inquiry.new
         @blogs = Blog.order(created_at: :desc).limit(3)
@@ -12,6 +13,7 @@ class ServicesController < ApplicationController
         @services = Service.order(created_at: :desc)
         @aroma = Service.where(category: 'Aroma_Teatment')
         @accessories = Service.where(category: 'Accessories')
+        @goods = Service.where(category: 'Goods')
         @school = Service.where(category: 'School')
         @service = Service.find(params[:id])
         @blogs = Blog.order(created_at: :desc).limit(3)
@@ -43,7 +45,17 @@ class ServicesController < ApplicationController
         flash.notice = 'サービスを削除しました。'
         redirect_to :admin_index
     end
-
+    
+    def update
+        @service = Service.find(params[:id])
+        if @service.update(service_params)
+            flash.notice = 'サービスを更新しました。'
+            redirect_to :admin_index
+            else
+            render action: 'edit'
+        end
+    end
+    
     private
 
     def service_params

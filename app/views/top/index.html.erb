@@ -30,10 +30,13 @@ $(".contents").eq(num).css("display","block");
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span> 
                                 </button>
+
                                 <!-- Site Logo Start -->
                                 <div class="logo">
-                                    <%= link_to root_path do %><span>s</span>alon de Corron<% end %>
+
+                                <%= link_to root_path do %><span>s</span>alon de Corron<% end %>
                                 </div>
+
                             </div>
                             <!-- Navbar Start -->
                             <div class="collapse navbar-collapse" id="myNavbar">
@@ -72,6 +75,7 @@ $(".contents").eq(num).css("display","block");
 
         <!-- Scroll Down Mouse Start -->
         <div class="scroll-down">
+
             <div class="mouse">
                 <a href="#about" class="scroll-link"><span class="fa fa-circle"></span></a>
             </div>
@@ -107,6 +111,7 @@ $(".contents").eq(num).css("display","block");
                                 <li class="active now" data-filter="*">all</li>
                                 <li data-filter=".aroma">Aroma treatment</li>
                                 <li data-filter=".accessories">Accessories</li>
+                                <li data-filter=".goods">Goods</li>
                                 <li data-filter=".school">School</li>
                             </ul>
 
@@ -181,7 +186,8 @@ $(".contents").eq(num).css("display","block");
                             <% end %>
                           </div>
                         </div>
-                      </div>
+                    </div>
+                    </div>
 
            <div class="contents">
            <div class="row">
@@ -189,6 +195,40 @@ $(".contents").eq(num).css("display","block");
                         <!-- Portfolio Items Start -->
                         <div class="porfolio-items">
                           <% @accessories.each do |m| %>
+                            <!-- Single Portflio 1 Start -->
+                            <div class="single-porfolio aroma">
+                                <div class="img text-center">
+                                    <% if m.service_image? %>
+                                    <%= image_tag m.service_image.thumb.url, :class => "img-responsive" %>
+                                    <% else %>
+                                    <%= image_tag 'noimage.gif' %>
+                                    <% end %>
+                                    <div class="porto-overlay"></div>
+                                    <div class="porto-body">
+                                        <div class="porto-text">
+                                            <h4><%= m.name %></h4>
+                                            <p><%= m.category %></p>
+                                        </div>
+                                        <div class="porto-icon">
+                                            <%= link_to service_path(m) do %>
+                                               <i class="fa fa-arrow-circle-right"></i>
+                                               <% end %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- End of Single Portflio 1 -->
+                            <% end %>
+           </div>
+       </div>
+       </div>
+       </div>
+
+                  <div class="contents">
+           <div class="row">
+                    <div class="col-md-12">
+                        <!-- Portfolio Items Start -->
+                        <div class="porfolio-items">
+                          <% @goods.each do |m| %>
                             <!-- Single Portflio 1 Start -->
                             <div class="single-porfolio aroma">
                                 <div class="img text-center">
@@ -265,10 +305,13 @@ $(".contents").eq(num).css("display","block");
                     <!-- About Left Start -->
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="about-top">
-                            <h5>京都 完全予約制のプライベートエステサロン</h5><br>
-                            <h3>salon de Corron<br><br>(サロン ド コロン)
+                        <div class="col-md-2 col-sm-2 col-xs-2">
+                            <%= image_tag ("corron-broch.png")%></div>
+                            <h5>整え、流す、本来の自分へ<br>京都北野の女性専用プライベートアロマサロン
+                            </h5><br>
+                            <h3><strong>salon de Corron</strong>
                             </h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+                            <span>　ゆったりとした静かな癒し空間で<br>日常の喧騒を忘れ、本来の自分を取り戻す。<br><br>オールハンドのオイルトリートメントで<br>極上のリラクゼーションタイム。<br><br>仕事や家事、子育てと女性は毎日はたらきもの<br>心身ともに疲れ緊張していませんか？ <br><br>植物の力が詰まった精油と天然オイルのトリートメントで<br>身体と心を見つめ、いたわり、より自分らしく、自然体へ・・・</span>
                         </div>
                         <!--<div class="about-bottom">
                             <div class="skillbar-group">
@@ -304,31 +347,31 @@ $(".contents").eq(num).css("display","block");
                             <div class="service">
                                 <div class="icon">
                                     <i class="fa fa-tree" aria-hidden="true"></i>
-                                    <i class="fa fa-tint" aria-hidden="true"></i>
                                 </div>
                                 <div class="content">
-                                    <h4>Aroma treatment</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat distinctio nam similique repellendus. Dolore numquam quo, minus voluptatem!</p>
+                                    <h4>Aroma treatment</h4><br>
+
+                                    <p>その日の気分や身体の状態に応じた精油とオイルを使ったトリートメントで部分から全身まで優しくゆったり流します。<br><br>日常の緊張をときほぐし、心身ともにリラックスへと導きます。<br><br>オプションで、美構造フェイシャルの施術も受けていただけます。<br><br>姿勢や呼吸を整えお顔や身体のバランスを整える施術です。</p>
                                 </div>
-                            </div> <!-- End of Service 1 -->
+                            </div><br> <!-- End of Service 1 -->
                             <!-- Service 2 Start -->
                             <div class="service">
                                 <div class="icon">
                                     <i class="fa fa-gift" aria-hidden="true"></i>
                                 </div>
                                 <div class="content">
-                                    <h4>Accessories</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat distinctio nam similique repellendus. Dolore numquam quo, minus voluptatem!</p>
+                                    <h4>Accessories</h4><br>
+                                    <p>京都西陣で機織りをしていた祖母の残してくれた色とりどりの絹糸で、アクセサリーを製作しています。<br><br>一本の糸より編み出す作品を通して、人とひととの繋がりや未来へ続く願いを籠めながら。<br><br>オーダーメイドもお受けいたします。</p>
                                 </div>
-                            </div> <!-- End of Service 2 -->
+                            </div><br> <!-- End of Service 2 -->
                             <!-- Service 3 Start -->
                             <div class="service">
                                 <div class="icon">
                                     <i class="fa fa-university" aria-hidden="true"></i>
                                 </div>
                                 <div class="content">
-                                    <h4>School</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat distinctio nam similique repellendus. Dolore numquam quo, minus voluptatem!</p>
+                                    <h4>School/Event</h4><br>
+                                    <p>ハンドメイドコスメの出張レッスン<br><br>オイルトリートメント・美構造フェイシャルの施術<br><br>ハンドメイドコスメワークショップ等<br><br>個人レッスンはサロンでも行っておりますので、お気軽にお問い合わせください。</p>
                                 </div>
                             </div> <!-- End of Service 3 -->
                             
@@ -405,7 +448,7 @@ $(".contents").eq(num).css("display","block");
                             <div class="single-process">
                                 <span>01　　　　＞</span>
                                 <h4>ご予約・お問い合わせ</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora totam blanditiis quidem.</p>
+                                <p>　どんなサービスが受けられるのか、先ずはお気軽にお問い合わせください。お問い合わせフォーム、またはメールにてご要望をお伺いいたします。</p>
                             </div> <!-- End of Single Process -->
                         </div> <!-- End of Single Process Column -->
                         <!-- Single Process Column Start -->
@@ -414,7 +457,7 @@ $(".contents").eq(num).css("display","block");
                             <div class="single-process">
                                 <span>02　　　　＞</span>
                                 <h4>カウンセリング</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora totam blanditiis quidem.</p>
+                                <p>　当サロンでは、身体と心の状態に合わせて、あなたに適した施術を行います。事前にお電話、もしくは当日に、しっかりとカウンセリングを行い、施術の効果を高めさせていただきます。</p>
                             </div> <!-- End of Single Process -->
                         </div> <!-- End of Single Process Column -->
                         <!-- Single Process Column Start -->
@@ -423,7 +466,7 @@ $(".contents").eq(num).css("display","block");
                             <div class="single-process">
                                 <span>03</span>
                                 <h4>施術開始</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora totam blanditiis quidem.</p>
+                                <p>　心と身体がリラックスできるゆったりとした空間で、あなたの内面と優しく向き合う時間をお約束します。</p>
                             </div> <!-- End of Single Process -->
                         </div> <!-- End of Single Process Column -->
                     </div> <!-- End of Process Wrapper -->
@@ -442,12 +485,15 @@ $(".contents").eq(num).css("display","block");
                         <div class="client-group">
                             <!-- Single Client 1 Start -->
                             <div class="single-client text-center">
-                                <p>京都北町癒しのサロン</p>
+                                
                                 <div class="client-img">
                                  <p class="trim-image-to-circle"></p>
                                 </div>
-                                <h4>Yuu Ueno</h4>
-                                <span>Salon de Corron Owner</span>
+                                <span>Therapist</span>
+                                <h4><strong>Yuu Ueno</strong></h4><br><h4>Biography</h4><br>
+
+                                <p>公益社団法人日本アロマ環境協会認定アロマテラピーインストラクター<br><br>マリアアグフローラルヒーリングアロマトリートメントアドバンス修了<br><br>ハンドメイドコスメ協会認定トータルスキンアドバイザー<br><br>
+百天レイキセカンド修了</p>
                             </div> <!-- End of Single Client 1 -->
 
                         </div> <!-- End of Client Group Column -->
@@ -480,10 +526,15 @@ $(".contents").eq(num).css("display","block");
                         <div class="separator"></div>
                     </div>
                 </div> <!-- End of Section Title -->
+                <div class="row text-center section-title">
+                <div class="col-md-12">
+                <h4>＊ご予約の場合はご希望日時とメニューをご記入ください。<br>
+ご来店時にプランをご提案することも可能ですので、お気軽にお問い合わせください。</h4>
+  </div></div>
                 <!-- Address Section Start -->
                 <div class="row address">
                     <!-- Address 1 Start -->
-                    <div class="col-md-4 text-center">
+                    <div class="col-md-6 text-center">
                         <div class="addrs">
                             <i class="fa fa-map-marker"></i>
                             <h4>address</h4>
@@ -491,15 +542,15 @@ $(".contents").eq(num).css("display","block");
                         </div>
                     </div> <!-- End of Address 1 -->
                     <!-- Address 2 Start -->
-                    <div class="col-md-4 text-center">
+                    <!--<div class="col-md-4 text-center">
                         <div class="addrs">
                             <i class="fa fa-phone"></i>
                             <h4>tell</h4>
                             <p>090-5168-8882</p>
                         </div>
-                    </div> <!-- End of Address 2 -->
+                    </div> --><!-- End of Address 2 -->
                     <!-- Address 3 Start -->
-                    <div class="col-md-4 text-center">
+                    <div class="col-md-6 text-center">
                         <div class="addrs">
                             <i class="fa fa-envelope"></i>
                             <h4>e-mail</h4>
@@ -519,12 +570,19 @@ $(".contents").eq(num).css("display","block");
                 <div class="row contact-sction">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="contact-form">
+
                             <form action="" method="post">
                                 <div class="name">
                                 <%= f.text_field :name, :id => "name", :class => "form-control", :placeholder => "お名前" %>
                                 </div>
                                 <div class="email">
+                                <%= f.text_field :kana, :id => "kana", :class => "form-control", :placeholder => "お名前(よみがな)" %>
+                                </div>
+                                <div class="name">
                                 <%= f.text_field :email, :id => "email", :class => "form-control", :placeholder => "Email"  %>
+                                </div>
+                                <div class="email">
+                                <%= f.text_field :phone, :id => "phone", :class => "form-control", :placeholder => "電話番号" %>
                                 </div>
                                 <div class="message">
                                 <%= f.text_area :message, :id => "message", :class => "form-control", :size => "30x10", :placeholder => "ご予約・お問い合わせ内容をご記入ください。"   %>
@@ -544,8 +602,45 @@ $(".contents").eq(num).css("display","block");
         
     </section>
     <!-- End of Content Section -->
-    
- 
+   <script src="http://maps.google.com/maps/api/js?key=AIzaSyD9ZbZ5eQoh08NQRKzcyVLxOo-_pR8KqVE"></script>
+    <script src="https://rawgit.com/HPNeo/gmaps/master/gmaps.js"></script>
+    <style>
+        @charset "utf-8";
+        #map {
+              height: 300px;
+            width: 100%;
+            background: #58B;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var map = new GMaps({
+                div: "#map",
+                lat: 35.033224,
+                lng: 135.736074,
+                zoom: 15,
+            });
+            var contentStr = '<p>' +
+            '<h6>salon de Corron</h6><br>' + '<p>〒602-8392 京都府京都市上京区北町（御前通）６３８−２１</p>' + 
+
+    '<a href="https://goo.gl/maps/D227VibWCMy" target="_blank" >拡大地図を表示</a>' +
+    '</p>';
+            map.addMarker({
+                lat: 35.033224,
+                lng: 135.736074,
+
+  title: 'Access',
+  infoWindow: {content: contentStr
+
+  }
+});
+        };
+
+    </script>
+
+    <div id="map"></div>
+     
+
     <script>
     /* ---------------------------------------
 
@@ -792,4 +887,5 @@ $(".contents").eq(num).css("display","block");
 
 
     </script>
+
 

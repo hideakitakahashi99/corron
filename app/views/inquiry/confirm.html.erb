@@ -1,26 +1,35 @@
-<%= form_for @inquiry, :url => inquiry_thanks_path do |f| %>
-  <table>
-    <tr>
-      <th>名前</th>
-      <td>
-        <%= f.hidden_field :name %>
-        <%= @inquiry.name %>
-      </td>
-    </tr>
-    <tr>
-      <th>メールアドレス</th>
-      <td>
-        <%= f.hidden_field :email %>
-        <%= @inquiry.email %>
-      </td>
-    </tr>
-    <tr>
-      <th>お問い合わせ内容</th>
-      <td>
-        <%= f.hidden_field :message %>
-        <%= simple_format(@inquiry.message) %>
-      </td>
-    </tr>
-  </table>
- <%= f.submit '送信' %>
+<div class="contact" id="contact">
+            <div class="overly"></div>
+            <div class="container">
+                <!-- Section Title Start -->
+                <div class="row text-center section-title">
+                    <div class="col-md-12">
+                        <h3>お問い合わせ内容確認</h3>
+                        <div class="separator"></div>
+                    </div>
+                </div> <!-- End of Section Title -->
+             <div class="row text-center section-title">
+                <div class="col-md-12">
+                <%= form_for @inquiry, :url => inquiry_thanks_path do |f| %>
+                
+                            <h4>お名前</h4>
+                            <p><%= f.hidden_field :name %>
+                              <%= @inquiry.name %></p><br><br>
+                              <h4>お名前（よみがな）</h4>
+                              <p><%= f.hidden_field :kana %>
+                                <%= @inquiry.kana %></p><br><br>
+                                <h4>email</h4>
+                                <p><%= f.hidden_field :email %>
+                                  <%= @inquiry.email %></p><br><br>
+                                  <h4>お問い合わせ内容</h4>
+                                  <p><%= f.hidden_field :message %>
+                                    <%= simple_format(@inquiry.message) %></p><br><br>
+                                     <%= f.submit '以上の内容で問い合わせる' %>
+                                     <%= link_to '戻る', :back %>
 <% end %>
+  </div>
+  </div>
+    </div></div>
+
+
+

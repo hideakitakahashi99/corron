@@ -62,7 +62,7 @@ $(".contents").eq(num).css("display","block");
                             <div id="header-text" class="header-text">
                                 <h2 class=" wow fadeInDown" data-wow-duration="1.5s" data-wow-delay="1200ms">Corron Blogs</h2>
                                 <h3 class=" wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="600ms"></h3>
-                                <a href="" class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1800ms">home</a> > <a href="" class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1800ms">blog</a>
+                                <a href="http://salon-de-corron.com" class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1800ms">home</a> > <a href="" class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1800ms">blog</a>
                             </div>
                         </div> <!-- End of Header Text -->
                     </div> <!-- End of Row -->
@@ -143,7 +143,7 @@ $(".contents").eq(num).css("display","block");
                                     <ul>
                                     <li>
                                     <h4><a href="https://www.facebook.com/salondecorron/" class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="800ms" target="_blank"><i class="fa fa-facebook"></i></a>
-                                        <a href="" class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="800ms"><i class="fa fa-twitter"></i></a></h4>
+                                        <a href="https://www.instagram.com/corron.yu/?hl=ja" class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="800ms"><i class="fa fa-instagram"></i></a></h4>
                                     </li>
                                 </ul>
                                 </div>
@@ -219,26 +219,44 @@ $(".contents").eq(num).css("display","block");
                     </div>
                 </div> <!-- End of Section Title -->
                 
+  <%= form_for @inquiry, :url => inquiry_confirm_path do |f| %>
+                <% if @inquiry.errors.any? %>
+      <strong>入力内容にエラーがあります</strong>
+      <ul>
+        <% @inquiry.errors.each do |attr, msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+      <% end %>
                 <div class="row contact-sction">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="contact-form">
+
                             <form action="" method="post">
                                 <div class="name">
-                                    <input type="text" name="name" id="name" class="form-control" placeholder="お名前">
+                                <%= f.text_field :name, :id => "name", :class => "form-control", :placeholder => "お名前" %>
                                 </div>
                                 <div class="email">
-                                    <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                                <%= f.text_field :kana, :id => "kana", :class => "form-control", :placeholder => "お名前(よみがな)" %>
+                                </div>
+                                <div class="name">
+                                <%= f.text_field :email, :id => "email", :class => "form-control", :placeholder => "Email"  %>
+                                </div>
+                                <div class="email">
+                                <%= f.text_field :phone, :id => "phone", :class => "form-control", :placeholder => "電話番号" %>
                                 </div>
                                 <div class="message">
-                                    <textarea name="message" id="message" class="form-control" cols="30" rows="10" placeholder="ご予約・お問い合わせ内容をご記入ください。"></textarea>
+                                <%= f.text_area :message, :id => "message", :class => "form-control", :size => "30x10", :placeholder => "ご予約・お問い合わせ内容をご記入ください。"   %>
+
                                 </div>
                                 <div class="submit text-center">
-                                    <button type="submit">送信</button>
+                                    <%= f.submit '確認', :class => "submit" %>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
+                <% end %>
             </div> <!-- End of Container -->
         </div>
         <!-- End of Contact Section -->
@@ -267,6 +285,7 @@ $(".contents").eq(num).css("display","block");
                                 <li class="active now" data-filter="*">all</li>
                                 <li data-filter=".aroma">Aroma treatment</li>
                                 <li data-filter=".accessories">Accessories</li>
+                                <li data-filter=".goods">Goods</li>
                                 <li data-filter=".school">School</li>
                             </ul>
                         
@@ -344,6 +363,7 @@ $(".contents").eq(num).css("display","block");
                           </div>
                         </div>
                       </div>
+                  </div>
 
            <div class="contents">
            <div class="row">
@@ -351,6 +371,40 @@ $(".contents").eq(num).css("display","block");
                         <!-- Portfolio Items Start -->
                         <div class="porfolio-items">
                           <% @accessories.each do |m| %>
+                            <!-- Single Portflio 1 Start -->
+                            <div class="single-porfolio aroma">
+                                <div class="img text-center">
+                                    <% if m.service_image? %>
+                                    <%= image_tag m.service_image.thumb.url, :class => "img-responsive" %>
+                                    <% else %>
+                                    <%= image_tag 'noimage.gif' %>
+                                    <% end %>
+                                    <div class="porto-overlay"></div>
+                                    <div class="porto-body">
+                                        <div class="porto-text">
+                                            <h4><%= m.name %></h4>
+                                            <p><%= m.category %></p>
+                                        </div>
+                                        <div class="porto-icon">
+                                            <%= link_to service_path(m) do %>
+                                               <i class="fa fa-arrow-circle-right"></i>
+                                               <% end %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- End of Single Portflio 1 -->
+                            <% end %>
+           </div>
+       </div>
+       </div>
+       </div>
+
+                         <div class="contents">
+           <div class="row">
+                    <div class="col-md-12">
+                        <!-- Portfolio Items Start -->
+                        <div class="porfolio-items">
+                          <% @goods.each do |m| %>
                             <!-- Single Portflio 1 Start -->
                             <div class="single-porfolio aroma">
                                 <div class="img text-center">

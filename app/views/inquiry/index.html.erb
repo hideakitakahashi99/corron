@@ -1,21 +1,122 @@
+ 
+
         <section id="content">
 
+<div class="header-area" >
+            <!-- Container Start -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="mainmenu">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span> 
+                                </button>
 
-        <!-- Contact Section Start -->
-        <div class="contact" id="contact">
+                                <!-- Site Logo Start -->
+                                <div class="logo">
+
+                                <%= link_to root_path do %><span>s</span>alon de Corron<% end %>
+                                </div>
+
+                            </div>
+                            <!-- Navbar Start -->
+                            <div class="collapse navbar-collapse" id="myNavbar">
+                                <div class="main-menu">
+                                    <ul class="nav navbar-nav">
+                                        <li class="active smooth-menu"><%= link_to "Home", :root %></li>
+                                        <li class="smooth-menu"><%= link_to "Services", :services %></li>
+                                        <li class="smooth-menu"><%= link_to "Blogs", :blogs %></li>
+                                        <li class="smooth-menu"><%= link_to "Contact", :inquiry %></li>
+                                    </ul>
+                                </div>
+                            </div> <!-- End of Navbar -->
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End of Header Text Area -->
+        </div> <!-- End of Header Text Area -->
+
+
+  <div class="contact" id="contact">
             <div class="overly"></div>
             <div class="container">
                 <!-- Section Title Start -->
                 <div class="row text-center section-title">
                     <div class="col-md-12">
+                        <h3>Contact</h3>
+                        <div class="separator"></div>
+                    </div>
+                </div> <!-- End of Section Title -->
+<div class="row text-center section-title">
+                <div class="col-md-12">
+                <h4>address</h4><br>
+                            <p>〒602-8392 京都市上京区御前通今出川上る北町638-21</p><br>
+                <h4>市バス『北野天満宮前』より徒歩8分<br><br>
+市バス『衣笠高前』より徒歩8分<br><br>
+嵐電『北野白梅町』より徒歩15分
+</h4>
+  </div></div>
+
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyD9ZbZ5eQoh08NQRKzcyVLxOo-_pR8KqVE"></script>
+    <script src="https://rawgit.com/HPNeo/gmaps/master/gmaps.js"></script>
+    <style>
+        @charset "utf-8";
+        #map {
+              height: 300px;
+            width: 100%;
+            background: #58B;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var map = new GMaps({
+                div: "#map",
+                lat: 35.033224,
+                lng: 135.736074,
+                zoom: 15,
+            });
+            var contentStr = '<p>' +
+            '<h6>salon de Corron</h6><br>' + '<p>〒602-8392 京都府京都市上京区北町（御前通）６３８−２１</p>' + 
+
+    '<a href="https://goo.gl/maps/D227VibWCMy" target="_blank" >拡大地図を表示</a>' +
+    '</p>';
+            map.addMarker({
+                lat: 35.033224,
+                lng: 135.736074,
+
+  title: 'Access',
+  infoWindow: {content: contentStr
+
+  }
+});
+        };
+
+    </script>
+    <div id="map"></div>
+     
+    </div></div>
+
+     <div class="contact" id="contact">
+            <div class="overly"></div>
+            <div class="container">
+<div class="row text-center section-title">
+                    <div class="col-md-12">
                         <h3>ご予約・お問い合わせ</h3>
                         <div class="separator"></div>
                     </div>
                 </div> <!-- End of Section Title -->
+                <div class="row text-center section-title">
+                <div class="col-md-12">
+                <h4>＊ご予約の場合はご希望日時とメニューをご記入ください。<br>
+ご来店時にプランをご提案することも可能ですので、お気軽にお問い合わせください。</h4>
+  </div></div>
                 <!-- Address Section Start -->
                 <div class="row address">
                     <!-- Address 1 Start -->
-                    <div class="col-md-4 text-center">
+                    <div class="col-md-6 text-center">
                         <div class="addrs">
                             <i class="fa fa-map-marker"></i>
                             <h4>address</h4>
@@ -23,15 +124,15 @@
                         </div>
                     </div> <!-- End of Address 1 -->
                     <!-- Address 2 Start -->
-                    <div class="col-md-4 text-center">
+                    <!--<div class="col-md-4 text-center">
                         <div class="addrs">
                             <i class="fa fa-phone"></i>
                             <h4>tell</h4>
                             <p>090-5168-8882</p>
                         </div>
-                    </div> <!-- End of Address 2 -->
+                    </div> --><!-- End of Address 2 -->
                     <!-- Address 3 Start -->
-                    <div class="col-md-4 text-center">
+                    <div class="col-md-6 text-center">
                         <div class="addrs">
                             <i class="fa fa-envelope"></i>
                             <h4>e-mail</h4>
@@ -39,7 +140,7 @@
                         </div>
                     </div> <!-- End of Address 3 -->
                 </div> <!-- End of Address Section -->
-                <%= form_for @inquiry, :url => inquiry_confirm_path do |f| %>
+                 <%= form_for @inquiry, :url => inquiry_confirm_path do |f| %>
                 <% if @inquiry.errors.any? %>
       <strong>入力内容にエラーがあります</strong>
       <ul>
@@ -51,12 +152,19 @@
                 <div class="row contact-sction">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="contact-form">
+
                             <form action="" method="post">
                                 <div class="name">
                                 <%= f.text_field :name, :id => "name", :class => "form-control", :placeholder => "お名前" %>
                                 </div>
                                 <div class="email">
+                                <%= f.text_field :kana, :id => "kana", :class => "form-control", :placeholder => "お名前(よみがな)" %>
+                                </div>
+                                <div class="name">
                                 <%= f.text_field :email, :id => "email", :class => "form-control", :placeholder => "Email"  %>
+                                </div>
+                                <div class="email">
+                                <%= f.text_field :phone, :id => "phone", :class => "form-control", :placeholder => "電話番号" %>
                                 </div>
                                 <div class="message">
                                 <%= f.text_area :message, :id => "message", :class => "form-control", :size => "30x10", :placeholder => "ご予約・お問い合わせ内容をご記入ください。"   %>
@@ -74,5 +182,255 @@
         </div>
         <!-- End of Contact Section -->
         
+
     </section>
     <!-- End of Content Section -->
+
+       <script>
+    /* ---------------------------------------
+
+1 - Adjust Loading Page
+2 - Make Header takes the Full Height of the window
+3 - Color Switcher && Changing Colors
+4 - Sticky Menu
+5 - Start Slick Slider Plugin in Slider Section
+6 - About Section Skill Bars
+7 - Hide menu after clicking on a link
+8 - Jquery Smooth Scroll
+9 - jquery scroll spy
+10 - Parallax Effect
+11 - Start numbers animate at fun-facts section
+12 - Wow Js Active Jquery
+13 - Start Isotop Plugin in Portfolio Section
+14 - Start Owl Carousel Plugin in Client Section
+15 - Jquery Go Down Button
+
+--------------------------------------- */
+
+(function($) {
+
+    "use strict";
+
+    /* ---------------------------------------------------
+        1 - Adjust Loading Page
+    ----------------------------------------------------- */
+    $(window).on("load", function () {
+        $(".loading .loading-wrapper").delay(500).animate({
+                top: "-100%"
+        }, 1000, "easeInQuart");
+        $(".loading").delay(1100).fadeOut(1500);
+    });
+
+    /* ----------------------------------------------------------
+        2 - Make Header takes the Full Height of the window
+    ------------------------------------------------------------ */
+    var homeSec = $("#home");
+    homeSec.height($(window).height());
+
+    $(window).on("resize", function() {
+        homeSec.height($(window).height());
+    });
+ 
+ 
+    /* ---------------------------------------------------
+        4 - Sticky Menu
+    ----------------------------------------------------- */
+    $(".header-area").sticky({topSpacing:0});
+    
+    /* ---------------------------------------------------
+        5 - Start Slick Slider Plugin in Slider Section
+    ----------------------------------------------------- */
+    $(window).on("load", function () {
+        function heroSlider() {
+
+            function slideAnimation(elem) {
+                var animEndEv = 'webkitAnimationEnd animationend';
+                elem.each(function() {
+                    var $this = $(this),
+                    $animationType = $this.data('animation');
+
+                    $this.css('opacity', '1').addClass($animationType).one(animEndEv, function() {
+                    $this.removeClass($animationType);
+                    });
+                });
+            }
+            var $heroSlider = $('.hero-slider'),
+                $sliderContent = $('.hero-slider-content'),
+                $firstSlideAnimation = $heroSlider.find('.slice:first').find("[data-animation ^= 'animated']");
+
+            $heroSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+                var slide = $(slick.$slides.get(currentSlide));
+                var $caption = slide.find("[data-animation ^= 'animated']").css('opacity', '0');
+            });
+            $heroSlider.on('afterChange', function(event, slick, currentSlide, nextSlide) {
+                var slide = $(slick.$slides.get(currentSlide));
+                var $caption = slide.find("[data-animation ^= 'animated']");
+                slideAnimation($caption);
+            });
+
+            $(".hero-slider").slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                useCSS: true,
+                autoplay: true,
+                autoplaySpeed: 7000,
+                arrows: true,
+                cssEase: 'ease-in-out',
+                lazyLoad: 'progressive',
+                dots: false,
+                fade: true,
+                infinite: true,
+                pauseOnHover: false,
+                prevArrow: $('.prev'),
+                nextArrow: $('.next')
+            }); 
+
+            slideAnimation($firstSlideAnimation);
+        }
+
+        heroSlider();
+    });
+    
+    /* ---------------------------------------------------
+        6 - About Section Skill Bars  
+    ----------------------------------------------------- */
+    $(".about").appear(function () {
+          $(".skillbar").skillBars();
+    }, {
+          accX: 0,
+          accY: -350
+    });
+    
+    /* ---------------------------------------------------
+        7 - Hide menu after clicking on a link 
+    ----------------------------------------------------- */
+    $("ul.nav li a").on("click", function () {
+        $("#myNavbar").collapse("hide");
+    });
+
+    /* ---------------------------------------------------
+        8 - Jquery Smooth Scroll
+    ----------------------------------------------------- */
+    $("li.smooth-menu > a").on("click", function (event) {
+        var $anchor = $(this);
+        var headerH = '56';
+        $("html, body").stop().animate({
+            scrollTop : $($anchor.attr('href')).offset().top - headerH + "px"
+        }, 1200, 'easeInOutExpo');
+
+        event.preventDefault();
+    });       
+
+    /* ---------------------------------------------------
+        9 - jquery scroll spy
+    ----------------------------------------------------- */
+    $(window).on("scroll", function () {
+        $("body").scrollspy({
+            target: '.navbar-collapse',
+            offset: 94
+        }); 
+    });
+
+    /* ---------------------------------------------------
+        10 - Parallax Effect
+    ----------------------------------------------------- */
+    var parallaxHome        = $("#home.parallax"),
+        parallaxFacts       = $("#fun-facts.parallax"),
+        parallaxTest        = $("#client.parallax");
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+        parallaxHome.css({"background-attachment": "scroll"});
+        parallaxFacts.css({"background-attachment": "scroll"});
+        parallaxTest.css({"background-attachment": "scroll"});
+    } else {
+        parallaxHome.parallax("50%", 0.3);
+        parallaxFacts.parallax("50%", 0.3);
+        parallaxTest.parallax("100%", 0.2);
+    }
+    
+    /* ---------------------------------------------------
+        11 - Start numbers animate at fun-facts section 
+    ----------------------------------------------------- */
+    $(".fun-facts").appear(function () {
+          $(".timer").countTo();
+    }, {
+          accX: 0,
+          accY: -350
+    });
+
+    /* ---------------------------------------------------
+        12 - Wow Js Active Jquery
+    ----------------------------------------------------- */
+    var wow = new WOW(
+        {
+        boxClass:     'wow',      // animated element css class (default is wow)
+        animateClass: 'animated', // animation css class (default is animated)
+        offset:       0,          // distance to the element when triggering the animation (default is 0)
+        mobile:       true,       // trigger animations on mobile devices (default is true)
+        live:         true,       // act on asynchronously loaded content (default is true)
+        callback:     function(box) {
+        // the callback is fired every time an animation is started
+        // the argument that is passed in is the DOM node being animated
+        },
+        scrollContainer: null // optional scroll container selector, otherwise use window
+        }
+    );
+    wow.init();  
+    
+    /* ---------------------------------------------------
+        13 - Start Isotop Plugin in Portfolio Section
+    ----------------------------------------------------- 
+    //active isotop js
+    $('.porfolio-items').isotope({
+        itemSelector: '.single-porfolio',
+        layoutMode: 'fitRows',
+    });
+
+    //isoptop click function
+    $(".portfolio-filter > ul.nav > li").on("click", function () {
+        $(".portfolio-filter > ul.nav > li").removeClass("active");
+        $(this).addClass("active");
+
+        var selector = $(this).attr("data-filter");
+        $(".porfolio-items").isotope({
+            filter: selector,
+            animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+            }
+        });
+
+        return false;
+    });
+    */
+    /* ---------------------------------------------------
+        14 - Start Owl Carousel Plugin in Client Section
+    ----------------------------------------------------- */
+    $(".client-group").owlCarousel({
+        navigation : false,
+        autoPlay: 3000,
+        slideSpeed : 1500,
+        pagination: true,
+        paginationSpeed : 1500,
+        singleItem: true 
+    });
+    
+    /* ---------------------------------------------------
+        15 - Jquery Go Down Button
+    ----------------------------------------------------- */
+    $("a.scroll-link").on("click", function (event) {
+        var $anchor = $(this);
+        var headerH = '56';
+        $("html, body").stop().animate({
+            scrollTop : $($anchor.attr('href')).offset().top - headerH + "px"
+        }, 1200, 'easeInOutExpo');
+
+        event.preventDefault();
+    });
+
+})(jQuery);
+
+
+    </script>
+
+

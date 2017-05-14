@@ -62,7 +62,7 @@ $(".contents").eq(num).css("display","block");
                             <div id="header-text" class="header-text">
                                 <h2 class=" wow fadeInDown" data-wow-duration="1.5s" data-wow-delay="300ms">Corron's Service menu</h2>
                                 <h3 class=" wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="600ms"></h3>
-                                <a href="" class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="600ms">home</a> > <a href="" class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="600ms">menu</a>
+                                <a href="http://salon-de-corron.com" class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="600ms">home</a> > <a href="" class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="600ms">menu</a>
                             </div>
                         </div> <!-- End of Header Text -->
                     </div> <!-- End of Row -->
@@ -105,6 +105,7 @@ $(".contents").eq(num).css("display","block");
                                 <li class="active now" data-filter="*">all</li>
                                 <li data-filter=".aroma">Aroma treatment</li>
                                 <li data-filter=".accessories">Accessories</li>
+                                <li data-filter=".goods">Goods</li>
                                 <li data-filter=".school">School</li>
                             </ul>
                         
@@ -182,6 +183,7 @@ $(".contents").eq(num).css("display","block");
                           </div>
                         </div>
                       </div>
+                  </div>
 
            <div class="contents">
            <div class="row">
@@ -196,6 +198,39 @@ $(".contents").eq(num).css("display","block");
                                      <%= image_tag m.service_image.thumb.url, :class => "img-responsive" %>
                                     <% else %>
                                      <%= image_tag 'noimage.gif' %>
+                                    <% end %>
+                                    <div class="porto-overlay"></div>
+                                    <div class="porto-body">
+                                        <div class="porto-text">
+                                            <h4><%= m.name %></h4>
+                                            <p><%= m.category %></p>
+                                        </div>
+                                        <div class="porto-icon">
+                                            <%= link_to service_path(m) do %>
+                                               <i class="fa fa-arrow-circle-right"></i>
+                                               <% end %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- End of Single Portflio 1 -->
+                            <% end %>
+           </div>
+       </div>
+       </div>
+       </div>
+                         <div class="contents">
+           <div class="row">
+                    <div class="col-md-12">
+                        <!-- Portfolio Items Start -->
+                        <div class="porfolio-items">
+                          <% @goods.each do |m| %>
+                            <!-- Single Portflio 1 Start -->
+                            <div class="single-porfolio aroma">
+                                <div class="img text-center">
+                                    <% if m.service_image? %>
+                                    <%= image_tag m.service_image.thumb.url, :class => "img-responsive" %>
+                                    <% else %>
+                                    <%= image_tag 'noimage.gif' %>
                                     <% end %>
                                     <div class="porto-overlay"></div>
                                     <div class="porto-body">
@@ -309,7 +344,7 @@ $(".contents").eq(num).css("display","block");
                 <!-- Address Section Start -->
                 <div class="row address">
                     <!-- Address 1 Start -->
-                    <div class="col-md-4 text-center">
+                    <div class="col-md-6 text-center">
                         <div class="addrs">
                             <i class="fa fa-map-marker"></i>
                             <h4>address</h4>
@@ -317,15 +352,15 @@ $(".contents").eq(num).css("display","block");
                         </div>
                     </div> <!-- End of Address 1 -->
                     <!-- Address 2 Start -->
-                    <div class="col-md-4 text-center">
+                    <!--<div class="col-md-4 text-center">
                         <div class="addrs">
                             <i class="fa fa-phone"></i>
                             <h4>tell</h4>
                             <p>090-5168-8882</p>
                         </div>
-                    </div> <!-- End of Address 2 -->
+                    </div>--> <!-- End of Address 2 -->
                     <!-- Address 3 Start -->
-                    <div class="col-md-4 text-center">
+                    <div class="col-md-6 text-center">
                         <div class="addrs">
                             <i class="fa fa-envelope"></i>
                             <h4>e-mail</h4>
@@ -333,7 +368,7 @@ $(".contents").eq(num).css("display","block");
                         </div>
                     </div> <!-- End of Address 3 -->
                 </div> <!-- End of Address Section -->
-                <%= form_for @inquiry, :url => inquiry_confirm_path do |f| %>
+                 <%= form_for @inquiry, :url => inquiry_confirm_path do |f| %>
                 <% if @inquiry.errors.any? %>
       <strong>入力内容にエラーがあります</strong>
       <ul>
@@ -345,12 +380,19 @@ $(".contents").eq(num).css("display","block");
                 <div class="row contact-sction">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="contact-form">
+
                             <form action="" method="post">
                                 <div class="name">
                                 <%= f.text_field :name, :id => "name", :class => "form-control", :placeholder => "お名前" %>
                                 </div>
                                 <div class="email">
+                                <%= f.text_field :kana, :id => "kana", :class => "form-control", :placeholder => "お名前(よみがな)" %>
+                                </div>
+                                <div class="name">
                                 <%= f.text_field :email, :id => "email", :class => "form-control", :placeholder => "Email"  %>
+                                </div>
+                                <div class="email">
+                                <%= f.text_field :phone, :id => "phone", :class => "form-control", :placeholder => "電話番号" %>
                                 </div>
                                 <div class="message">
                                 <%= f.text_area :message, :id => "message", :class => "form-control", :size => "30x10", :placeholder => "ご予約・お問い合わせ内容をご記入ください。"   %>

@@ -32,16 +32,15 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.smtp_settings = {
       :enable_starttls_auto => true,
-      :address => 'smtp.gmail.com',
+      :address => 'email-smtp.us-west-2.amazonaws.com',
       :port => '587',
-      :domain => 'smtp.gmail.com',
+      :domain => 'salon-de-corron.com',
       :authentication => 'plain',
-      :user_name => 'hideakitakahashi99@gmail.com',
-      :password => 'dai108dainaikakusouridaijinn',
-      :password => 'lfmhlmhetxgecdjs'
+      :user_name => 'AKIAJBF47Y5A2PLLU5VQ',
+      :password => 'AlM4oFhDu6y3UjmjorFnkBRGp+GiBCjay05ULmhCC9Z/',
   }
 
-  config.action_mailer.perform_caching = false
+  config.action_mailer.perform_caching = true
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

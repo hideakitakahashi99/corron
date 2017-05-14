@@ -65,3 +65,6 @@ group :production, :staging do
     gem 'unicorn'
 end
 gem 'yui-compressor'
+
+gem 'aws-sdk-rails'
+gem 'figaro'
