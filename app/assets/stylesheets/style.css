@@ -819,7 +819,6 @@ kenburns-2 {
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 7px;
-    text-transform: capitalize;
 }
 .about .about-right .service .content p {}
 /* End of About Section */
@@ -895,10 +894,24 @@ kenburns-2 {
 .portfolio-filter > .nav > li:hover {
     color: #f27768;
 }
-.portfolio .porfolio-items {}
+
+.centered {
+position: relative;
+overflow: hidden;
+}
+.portfolio-center {
+ position: relative;
+left: 50%;
+float: left;
+}
+
+.portfolio .porfolio-items {
+}
 .portfolio .porfolio-items .single-porfolio {
+position: relative;
+left: -50%;
     float: left;
-    width: 25%;
+    width: 350px;
 }
 .portfolio .porfolio-items .white-space {
     padding: 10px;
@@ -1408,6 +1421,11 @@ strong{
     margin-bottom: 20px;
 }
 
+.margin-top{
+  margin-top:50px;
+}
+
+
 input.submit{
         background-color: #f27768;
     border: 1px solid #f27768;
@@ -1439,3 +1457,28 @@ margin-bottom: 10px;
 }
 
 h1{font-size: 20px; font-weight: normal; text-shadow: rgba(0, 0, 0, 0.08) 2px 4px 3px; font-family: "ＭＳ Ｐゴシック", "MS PGothic", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN";}
+
+ul.news{
+  position: relative;
+  padding: 15px 15px 15px 30px;
+  font: 14px/1.6 'arial narrow', sans-serif;
+  border: solid 2px #adcce8;
+  border-radius:8px;
+  color: #448ccb;
+  width:100%;
+  
+}
+ul.news:before{
+  content: "NEWS";  /* 好きな文字を記述 */
+  position: absolute;
+  display: block;
+  top: -30px;
+  left: 0px;
+  
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0 10px;
+}
+ul.news li{
+  font-weight: bold;
+}

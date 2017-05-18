@@ -102,11 +102,9 @@ $(".contents").eq(num).css("display","block");
                         <div class="portfolio-filter text-center">
                         
                             <ul class="nav">
-                                <li class="active now" data-filter="*">all</li>
-                                <li data-filter=".aroma">Aroma treatment</li>
+                                <li class="active now" data-filter="*">Aroma treatment</li>
                                 <li data-filter=".accessories">Accessories</li>
-                                <li data-filter=".goods">Goods</li>
-                                <li data-filter=".school">School</li>
+                                <li data-filter=".school">School/Event</li>
                             </ul>
                         
                         </div> <!-- End of Portfolio Filter -->
@@ -114,42 +112,9 @@ $(".contents").eq(num).css("display","block");
                     </div>
                 </div> <!-- End of Portfolio Filter Row -->
                 <!-- Portfolio Items Row Start -->
-                <div class="contents">
-                <div class="row">
-                    <div class="col-md-12">
-                        <!-- Portfolio Items Start -->
-                        <div class="porfolio-items">
-                        <% @services.each do |m| %>
-                            <!-- Single Portflio 1 Start -->
-                            <div class="single-porfolio aroma">
-                                <div class="img text-center">
-                                    <% if m.service_image? %>
-                                     <%= image_tag m.service_image.thumb.url, :class => "img-responsive" %>
-                                    <% else %>
-                                     <%= image_tag 'noimage.gif' %>
-                                    <% end %>
 
-                                    <div class="porto-overlay"></div>
-                                    <div class="porto-body">
-                                        <div class="porto-text">
-                                            <h4><%= m.name %></h4>
-                                            <p><%= m.category %></p>
-                                        </div>
-                                        <div class="porto-icon">
-                                            <%= link_to service_path(m) do %>
-                                               <i class="fa fa-arrow-circle-right"></i>
-                                               <% end %>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> <!-- End of Single Portflio 1 -->
-                            <% end %>
-                            
-
-                        </div> <!-- End of Portfolio Items -->
-                    </div>
-                </div> <!-- End of Portfolio Items Row -->
-            </div>
+<div class="centered">
+<div class="portfolio-center">
 
            <div class="contents">
            <div class="row">
@@ -218,39 +183,6 @@ $(".contents").eq(num).css("display","block");
        </div>
        </div>
        </div>
-                         <div class="contents">
-           <div class="row">
-                    <div class="col-md-12">
-                        <!-- Portfolio Items Start -->
-                        <div class="porfolio-items">
-                          <% @goods.each do |m| %>
-                            <!-- Single Portflio 1 Start -->
-                            <div class="single-porfolio aroma">
-                                <div class="img text-center">
-                                    <% if m.service_image? %>
-                                    <%= image_tag m.service_image.thumb.url, :class => "img-responsive" %>
-                                    <% else %>
-                                    <%= image_tag 'noimage.gif' %>
-                                    <% end %>
-                                    <div class="porto-overlay"></div>
-                                    <div class="porto-body">
-                                        <div class="porto-text">
-                                            <h4><%= m.name %></h4>
-                                            <p><%= m.category %></p>
-                                        </div>
-                                        <div class="porto-icon">
-                                            <%= link_to service_path(m) do %>
-                                               <i class="fa fa-arrow-circle-right"></i>
-                                               <% end %>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> <!-- End of Single Portflio 1 -->
-                            <% end %>
-           </div>
-       </div>
-       </div>
-       </div>
 
 <div class="contents">
 <div class="row">
@@ -286,7 +218,7 @@ $(".contents").eq(num).css("display","block");
        </div>
        </div>
 
-
+   </div></div>
 
             </div> <!-- End of Container -->
         </div>

@@ -35,6 +35,7 @@ $(".contents").eq(num).css("display","block");
                                 <div class="logo">
 
                                 <%= link_to root_path do %><span>s</span>alon de Corron<% end %>
+                                
                                 </div>
 
                             </div>
@@ -63,8 +64,8 @@ $(".contents").eq(num).css("display","block");
                         <!-- Header Text -->
                         <div class="col-md-12 col-sm-12 col-xs-12 text-center">
                             <div id="header-text" class="header-text">
-                                <h2 class=" wow fadeInDown" data-wow-duration="1.5s" data-wow-delay="1200ms">salon de Corron</h2>
-                                <h3 class=" wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="600ms">ホッと一息 大人の隠れ家<br> 心の健康がつくる美しさをあなたに</h3>
+                                <h2 class=" wow fadeInDown" data-wow-duration="1.5s" data-wow-delay="1200ms"><%= image_tag "corron-logo.png", style: 'width:50%; '%></h2>
+                                <!--<h3 class=" wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="600ms">ホッと一息 大人の隠れ家<br> 心の健康がつくる美しさをあなたに</h3>-->
                                 <a href="/services/" class="header-btn2 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1800ms">menu</a>
                             </div>
                         </div> <!-- End of Header Text -->
@@ -108,11 +109,10 @@ $(".contents").eq(num).css("display","block");
                         <div class="portfolio-filter text-center">
 
                             <ul class="nav">
-                                <li class="active now" data-filter="*">all</li>
-                                <li data-filter=".aroma">Aroma treatment</li>
+                                <li class="active now" data-filter="*">Aroma treatment</li>
                                 <li data-filter=".accessories">Accessories</li>
-                                <li data-filter=".goods">Goods</li>
-                                <li data-filter=".school">School</li>
+
+                                <li data-filter=".school">School/Event</li>
                             </ul>
 
                         </div> <!-- End of Portfolio Filter -->
@@ -121,40 +121,8 @@ $(".contents").eq(num).css("display","block");
                 </div> <!-- End of Portfolio Filter Row -->
 
                 <!-- Portfolio Items Row Start -->
-                <div class="contents">
-                <div class="row">
-                    <div class="col-md-12">
-                        <!-- Portfolio Items Start -->
-                        <div class="porfolio-items">
-                        <% @services.each do |m| %>
-                            <!-- Single Portflio 1 Start -->
-                            <div class="single-porfolio aroma">
-                                <div class="img text-center">
-                                    <% if m.service_image? %>
-                                    <%= image_tag m.service_image.thumb.url, :class => "img-responsive" %>
-                                    <% else %>
-                                    <%= image_tag 'noimage.gif' %>
-                                    <% end %>
-                                    <div class="porto-overlay"></div>
-                                    <div class="porto-body">
-                                        <div class="porto-text">
-                                            <h4><%= m.name %></h4>
-                                            <p><%= m.category %></p>
-                                        </div>
-                                        <div class="porto-icon">
-                                            <%= link_to service_path(m) do %>
-                                               <i class="fa fa-arrow-circle-right"></i>
-                                               <% end %>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> <!-- End of Single Portflio 1 -->
-                            <% end %>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+<div class="centered">
+<div class="portfolio-center">
            <div class="contents">
            <div class="row">
                     <div class="col-md-12">
@@ -223,39 +191,6 @@ $(".contents").eq(num).css("display","block");
        </div>
        </div>
 
-                  <div class="contents">
-           <div class="row">
-                    <div class="col-md-12">
-                        <!-- Portfolio Items Start -->
-                        <div class="porfolio-items">
-                          <% @goods.each do |m| %>
-                            <!-- Single Portflio 1 Start -->
-                            <div class="single-porfolio aroma">
-                                <div class="img text-center">
-                                    <% if m.service_image? %>
-                                    <%= image_tag m.service_image.thumb.url, :class => "img-responsive" %>
-                                    <% else %>
-                                    <%= image_tag 'noimage.gif' %>
-                                    <% end %>
-                                    <div class="porto-overlay"></div>
-                                    <div class="porto-body">
-                                        <div class="porto-text">
-                                            <h4><%= m.name %></h4>
-                                            <p><%= m.category %></p>
-                                        </div>
-                                        <div class="porto-icon">
-                                            <%= link_to service_path(m) do %>
-                                               <i class="fa fa-arrow-circle-right"></i>
-                                               <% end %>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> <!-- End of Single Portflio 1 -->
-                            <% end %>
-           </div>
-       </div>
-       </div>
-       </div>
 
 <div class="contents">
 <div class="row">
@@ -291,6 +226,9 @@ $(".contents").eq(num).css("display","block");
        </div>
        </div>
 
+
+       </div>
+   </div>
 
 
             </div> <!-- End of Container -->
@@ -338,6 +276,19 @@ $(".contents").eq(num).css("display","block");
                                 </div> 
                             </div>
                         </div> -->
+<div class="margin-top">
+
+                        <ul class="news">
+   <div class="service">
+  <% @school.each do |m| %>
+                                <li><div class="content">
+                                    <%= link_to service_path(m) do %><p><%= m.created_at.strftime("%Y年%m月%d日") %>　<%= m.name%></p><% end %>
+                                </div></li>
+
+                                <% end %>
+                            </div>
+</ul>
+    </div>
                     </div> <!-- End of About Left -->
                     <!-- About Right Column Start -->
                     <div class="col-md-5 col-md-offset-1 col-sm-6 col-xs-12">
@@ -351,7 +302,7 @@ $(".contents").eq(num).css("display","block");
                                 <div class="content">
                                     <h4>Aroma treatment</h4><br>
 
-                                    <p>その日の気分や身体の状態に応じた精油とオイルを使ったトリートメントで部分から全身まで優しくゆったり流します。<br><br>日常の緊張をときほぐし、心身ともにリラックスへと導きます。<br><br>オプションで、美構造フェイシャルの施術も受けていただけます。<br><br>姿勢や呼吸を整えお顔や身体のバランスを整える施術です。</p>
+                                    <p>その日の気分や身体の状態に応じた精油とオイルを使ったトリートメントで部分から全身まで優しくゆったり流します。<br>日常の緊張をときほぐし、心身ともにリラックスへと導きます。<br><br>オプションで、美構造フェイシャルの施術も受けていただけます。<br><br>姿勢や呼吸を整えお顔や身体のバランスを整える、美構造フェイシャルもおすすめです。</p>
                                 </div>
                             </div><br> <!-- End of Service 1 -->
                             <!-- Service 2 Start -->
@@ -371,7 +322,18 @@ $(".contents").eq(num).css("display","block");
                                 </div>
                                 <div class="content">
                                     <h4>School/Event</h4><br>
-                                    <p>ハンドメイドコスメの出張レッスン<br><br>オイルトリートメント・美構造フェイシャルの施術<br><br>ハンドメイドコスメワークショップ等<br><br>個人レッスンはサロンでも行っておりますので、お気軽にお問い合わせください。</p>
+                                    <p>ハンドメイドコスメの出張レッスン<br>オイルトリートメント・美構造フェイシャルの施術<br>ハンドメイドコスメワークショップ等<br><br>個人レッスンはサロンでも行っておりますので、お気軽にお問い合わせください。</p>
+                                </div>
+                            </div><br> <!-- End of Service 3 -->
+                             <!-- Service 3 Start -->
+                            <div class="service">
+                                <div class="icon">
+                                    <i class="fa fa-paint-brush" aria-hidden="true"></i>
+                                </div>
+                                <div class="content">
+                                    <h4>Handmade cosme</h4><br>
+                                    <p>お肌のトラブルを抱える方が増える一方で、市販の化粧品に配合される成分は曖昧表記になっています。<br><br>生活するうえで、自分が食べるもの、身に着け使用するものは自己責任で選ぶ時代。<br>自身の身体を見つめ自分に合ったスキンケア用品を安心原料で配合する。<br><br>サロンでは個々のお悩みに寄り添いながらオリジナルのスキンケア用品をお作りいただけます。
+</p>
                                 </div>
                             </div> <!-- End of Service 3 -->
                             

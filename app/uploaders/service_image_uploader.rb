@@ -21,7 +21,7 @@ class ServiceImageUploader < CarrierWave::Uploader::Base
 
 
   version :thumb do
-  process :resize_to_limit => [360, 260]
+  process :resize_to_fill => [360, 260]
   end
 
 def filename

@@ -107,10 +107,8 @@ $(".contents").eq(num).css("display","block");
                         <div class="portfolio-filter text-center">
                         
                             <ul class="nav">
-                                <li class="active now" data-filter="*">all</li>
-                                <li>Aroma treatment</li>
+                                <li class="active now" data-filter="*">Aroma treatment</li>
                                 <li>Accessories</li>
-                                <li>Goods</li>
                                 <li>School</li>
                             </ul>
                         
@@ -119,50 +117,9 @@ $(".contents").eq(num).css("display","block");
                     </div>
                 </div> <!-- End of Portfolio Filter Row -->
                 <!-- Portfolio Items Row Start -->
-                <div class="contents">
-                <div class="row">
-                    <div class="col-md-12">
-                        <!-- Portfolio Items Start -->
-                        <div class="porfolio-items">
-                        <% @services.each do |m| %>
-                            <!-- Single Portflio 1 Start -->
-                            <div class="single-porfolio aroma">
-                                <div class="img text-center">
-                                    <% if m.service_image? %>
-                                     <%= image_tag m.service_image.thumb.url, :class => "img-responsive" %>
-                                    <% else %>
-                                     <%= image_tag 'noimage.gif' %>
-                                    <% end %>
 
-                                    <div class="porto-overlay"></div>
-                                    <div class="porto-body">
-                                        <div class="porto-text">
-                                            <h4><%= m.name %></h4>
-                                            <p><%= m.category %></p>
-                                        </div>
-                                        <div class="porto-icon">
-                                            <%= link_to service_path(m) do %>
-                                               <i class="fa fa-eye"></i>
-                                               <% end %>
-                                               <%= link_to edit_service_path(m) do %>
-                                               <i class="fa fa-pencil-square-o"></i>
-                                               <% end %>
-                                            <%= link_to service_path(m), method: :delete, data: {confirm: "この登録サービスを削除しますか？"} do %>
-                                               <i class="fa fa-trash-o"></i>
-                                               <% end %>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> <!-- End of Single Portflio 1 -->
-                            <% end %>
-                         
-
-
-                        </div> <!-- End of Portfolio Items -->
-                    </div>
-                </div> <!-- End of Portfolio Items Row -->
-            </div>
-
+<div class="centered">
+<div class="portfolio-center">
            <div class="contents">
            <div class="row">
                     <div class="col-md-12">
@@ -243,45 +200,6 @@ $(".contents").eq(num).css("display","block");
        </div>
        </div>
 
-                         <div class="contents">
-           <div class="row">
-                    <div class="col-md-12">
-                        <!-- Portfolio Items Start -->
-                        <div class="porfolio-items">
-                          <% @goods.each do |m| %>
-                            <!-- Single Portflio 1 Start -->
-                            <div class="single-porfolio aroma">
-                                <div class="img text-center">
-                                    <% if m.service_image? %>
-                                    <%= image_tag m.service_image.thumb.url, :class => "img-responsive" %>
-                                    <% else %>
-                                    <%= image_tag 'noimage.gif' %>
-                                    <% end %>
-                                    <div class="porto-overlay"></div>
-                                    <div class="porto-body">
-                                        <div class="porto-text">
-                                            <h4><%= m.name %></h4>
-                                            <p><%= m.category %></p>
-                                        </div>
-                                        <div class="porto-icon">
-                                            <%= link_to service_path(m) do %>
-                                               <i class="fa fa-eye"></i>
-                                               <% end %>
-                                               <%= link_to edit_service_path(m) do %>
-                                               <i class="fa fa-pencil-square-o"></i>
-                                               <% end %>
-                                            <%= link_to service_path(m), method: :delete, data: {confirm: "この登録サービスを削除しますか？"} do %>
-                                               <i class="fa fa-trash-o"></i>
-                                               <% end %>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> <!-- End of Single Portflio 1 -->
-                            <% end %>
-           </div>
-       </div>
-       </div>
-       </div>
 
 <div class="contents">
 <div class="row">
@@ -320,7 +238,7 @@ $(".contents").eq(num).css("display","block");
        </div>
        </div>
 
-
+     </div></div>
 
             </div> <!-- End of Container -->
         </div>
