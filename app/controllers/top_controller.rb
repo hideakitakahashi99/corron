@@ -7,6 +7,7 @@ class TopController < ApplicationController
         @accessories = Service.where(category: 'Accessories')
         @goods = Service.where(category: 'Goods')
         @school = Service.where(category: 'School')
+        @news = Service.where(category: 'School').limit(10)
         @inquiry = Inquiry.new
     end
     
