@@ -15,7 +15,7 @@ class BlogimageUploader < CarrierWave::Uploader::Base
   end
   
   version :thumb do
-  process :resize_to_limit => [360, 260]
+  process :resize_to_fill => [360, 260]
 end
 
 process convert: 'jpg'

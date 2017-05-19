@@ -135,12 +135,17 @@ $(".contents").eq(num).css("display","block");
                     <div class="col-md-5 col-md-offset-1 col-sm-6 col-xs-12">
                         <div class="about-top">
                             <h5><%= @service.category %></h5><br>
-                            <h3><strong><%= @service.name %></strong><br><br>
+                            <h3><strong><%= @service.name %></strong><h3>
                             <% if @service.price? %>
-                            <strong><%= @service.price %>yen</strong>
+                            <h3><strong><%= @service.price %>yen</strong></h3>
                             <% else %>
                             <% end %>
-                            </h3>
+                            <% if @service.category == "School" %>
+                            <h5>日程：</h5>
+                            <h3><%= @service.eventdate.strftime("%Y年%m月%d日  %H:%M") %></h3>
+                            <% else %>
+                            <% end %>
+                            
                             <p><%= simple_format(@service.content) %></p>
                         </div>
                     </div>  <!-- End of About Right Column -->

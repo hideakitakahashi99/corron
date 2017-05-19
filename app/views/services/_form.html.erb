@@ -22,7 +22,7 @@
                                 <%= f.text_field :name, :id => "name", :class => "form-control", :placeholder => "サービス名", :size => "50" %>
 
                                 </div>
-
+<br>
                                 <div>
                                  <%= image_tag @service.service_image.thumb.url if @service.service_image? %>
                                  <%= f.file_field :service_image, :class => "form-control" %> 
@@ -38,6 +38,11 @@
                                 <%= f.text_area :content, :id => "message", :class => "form-control", :size => "80x10", :placeholder => "サービスの詳細をご記入ください。（改行可）"%>
                                 </div>
 
+                                <div class="message">
+                                  <p>イベント用日時（イベント以外の場合は未入力可）</p>
+                                <%= f.datetime_field :eventdate, :id => "name", :class => "form-control" %>
+
+                                </div>
 
 
 <br>

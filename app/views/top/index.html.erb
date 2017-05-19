@@ -282,7 +282,7 @@ $(".contents").eq(num).css("display","block");
    <div class="service">
   <% @news.each do |m| %>
                                 <li><div class="content">
-                                    <%= link_to service_path(m) do %><p><%= m.created_at.strftime("%Y年%m月%d日") %>　<%= m.name%></p><% end %>
+                                    <%= link_to service_path(m) do %><p><%= m.eventdate.strftime("%Y年%m月%d日") %>　<%= m.name%></p><% end %>
                                 </div></li>
 
                                 <% end %>
