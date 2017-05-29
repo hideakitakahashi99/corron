@@ -14,11 +14,11 @@
                     <div class="col-md-8 col-md-offset-2">
                         <div class="contact-form">
                             <form action="" method="post">
-                            <div class="name">
+                            <div class="name" style="clear:both;">
                             <%= f.select :category, Service::SERVICE_NAMES, prompt: 'サービスカテゴリーをお選び下さい。'%>
                             </div><br><br>
 
-                                <div class="name">
+                                <div class="name" style="clear:both;">
                                 <%= f.text_field :name, :id => "name", :class => "form-control", :placeholder => "サービス名", :size => "50" %>
 
                                 </div>
@@ -28,17 +28,17 @@
                                  <%= f.file_field :service_image, :class => "form-control" %> 
                                  <%= f.hidden_field :service_image_cache %>
                                 </div><br>
-                                <div class="name">
+                                <div class="name" style="clear:both;">
                                 <%= f.text_field :price, :id => "name", :class => "form-control", :placeholder => "料金（半角数字　単位/円）" %>
 
                                 </div>
 
 
-                                <div class="message">
-                                <%= f.text_area :content, :id => "message", :class => "form-control", :size => "80x10", :placeholder => "サービスの詳細をご記入ください。（改行可）"%>
+                                <div class="message" style="clear:both;">
+                                <%= f.cktext_area :content, :id => "message", :class => "form-control", :size => "80x10"%>
                                 </div>
 
-                                <div class="message">
+                                <div class="message" style="clear:both;">
                                   <p>イベント用日時（イベント以外の場合は未入力可）</p>
                                 <%= f.datetime_field :eventdate, :id => "name", :class => "form-control" %>
 
@@ -46,7 +46,7 @@
 
 
 <br>
-                                <div class="submit text-center">
+                                <div class="submit text-center" style="clear:both;">
                                     <%= f.submit 'サービス登録', :class => "submit" %>
                                 </div>
                             </form>

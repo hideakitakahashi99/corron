@@ -16,7 +16,9 @@ $(".contents").eq(num).css("display","block");
 
 
     <!-- Header Section Start -->
+ 
     <header id="treatment" class="top-area parallax" style="height: 300px;">
+        <div class=" header-overlay" style="height: 300px;"></div>
         <!-- Header Area Start -->
         <div class="header-area" >
             <!-- Container Start -->
@@ -32,7 +34,7 @@ $(".contents").eq(num).css("display","block");
                                 </button>
                                 <!-- Site Logo Start -->
                                 <div class="logo">
-                                    <%= link_to root_path do %><span>s</span>alon de Corron<% end %>
+                                    <%= link_to root_path, :class => "new-font" do %><span>s</span>alon de Corron<% end %>
                                 </div>
                             </div>
                             <!-- Navbar Start -->
@@ -55,12 +57,12 @@ $(".contents").eq(num).css("display","block");
         <!-- Header Text Area Start -->
         <div class="header-text-area sub text-left">
             <div class="header-text-content">
-                <div class="container">
+                <div class="container ">
                     <div class="row">
                         <!-- Header Text -->
-                        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                        <div class="col-md-12 col-sm-12 col-xs-12 text-center ">
                             <div id="header-text" class="header-text">
-                                <h2 class=" wow fadeInDown" data-wow-duration="1.5s" data-wow-delay="300ms">Corron's Service menu</h2>
+                                <h2 class=" wow fadeInDown new-font" data-wow-duration="1.5s" data-wow-delay="300ms">Corron's Service menu</h2>
                                 <h3 class=" wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="600ms"></h3>
                                 <a href="http://salon-de-corron.com" class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="600ms">home</a> > <a href="" class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="600ms">menu</a>
                             </div>
@@ -78,10 +80,96 @@ $(".contents").eq(num).css("display","block");
     <!-- Content Section Start -->
     <section id="content">
 
+ 
+        <!-- Contact Section Start -->
+        <div class="portfolio" id="portfolio">
+            <div class="overly"></div>
+            <div class="container">
+                <!-- Section Title Start -->
+                <div class="row text-center section-title">
+                    <div class="col-md-12">
+                        <h3 class="new-font">menu</h3>
+                        <div class="separator"></div>
+                    </div>
+                </div> <!-- End of Section Title -->
+                <!-- Address Section Start -->
+                <div class="row address">
+                    <!-- Address 1 Start -->
+                    <div class="col-md-6">
+                    <ul class="menu">
+                        <div class="addrs">
+                            
+                            <li><h1 class="text-left">Single Care Course</h1></li>
+                            <li><p class="text-left">シングル ケア コース</p></li>
 
 
-        
-        
+<hr class="pill">
+
+                            <li class="margin-top50"><h4 class="text-left">Hand</h4></li>
+                            <li><h4 class="text-right">2,000yen/20min</h4></li>
+                            <hr class="pill-s">
+                            <p>【トリートメント　20分】<br>
+手の指先から肘までのトリートメントです。 
+    指や掌、甲を優しく刺激し、肘までゆっくり流していきます。 </p>
+                            <li class="margin-top"><h4 class="text-left">Facial</h4></li>
+                            <li><h4 class="text-right">4,000yen/35min</h4></li>
+                            <hr class="pill-s">
+                            <p>【足浴5分　クレンジング・トリートメント30分】<br>
+リンパの流れを促し、顔のこりに働きかける施術です。
+    日常の緊張をときほぐし、リラックスしたい方におすすめです。</p>
+                            <li class="margin-top"><h4  class="text-left">Foot</h4></li>
+                            <li><h4 class="text-right">4,000yen/45min</h4></li>
+                            <hr class="pill-s">
+                            【足浴5分　トリートメント40分】<br>
+脚の前面後面のトリートメントです。 
+リフレクソロジーも取り入れた施術です。冷えやむくみにお悩みの方におすすめです。
+
+                        </div>
+                    </ul>
+                    </div> <!-- End of Address 1 -->
+                    <!-- Address 2 Start -->
+                    <!--<div class="col-md-4 text-center">
+                        <div class="addrs">
+                            <i class="fa fa-phone"></i>
+                            <h4>tell</h4>
+                            <p>090-5168-8882</p>
+                        </div>
+                    </div>--> <!-- End of Address 2 -->
+                    <!-- Address 3 Start -->
+                    <div class="col-md-6 text-center">
+                        <ul class="menu">
+                        <div class="addrs">
+                            
+                            <li> <h1 class="text-left">Total Care Course</h1></li>
+                            <li><p class="text-left">トータル ケア コース</p></li>
+<hr class="pill">
+                            <li class="margin-top50"><h4 class="text-left">Back＆Decoletee</h4></li>
+                            <li><h4 class="text-right">4,000yen/45min</h4></li>
+                            <hr class="pill-s">
+                            <p class="text-left">【足浴5分　トリートメント40分】<br>
+背中とデコルテのトリートメントです。 
+    深くゆったりとリンパや老廃物を流していきます。腰の疲れや、肩こりでお悩みの方におすすめです。</p>
+                            <li class="margin-top"><h4 class="text-left">Full Body</h4></li>
+                            <li><h4 class="text-right">8,000yen/85min</h4></li>
+                            <hr class="pill-s">
+                            <p class="text-left">【足浴5分　トリートメント80分】<br>
+背中、脚、手、腕、デコルテ、全身のトリートメントです。 
+    全身をしっかりトリートメントすることで身体全体のバランスを整えます。</p>
+                            <li class="margin-top"><h4  class="text-left">Facial＆Full Body</h4></li>
+                            <li><h4 class="text-right">10,000yen/105min</h4></li>
+                            <hr class="pill-s">
+                            <p class="text-left">【足浴5分　クレンジング・トリートメント100分】<br>
+全身＋お顔のトリートメントです。 
+    極上のリラクゼーションをお楽しみください。</p>
+                        </div>
+                    </ul>
+                    </div> <!-- End of Address 3 -->
+                </div> <!-- End of Address Section -->
+
+            </div> <!-- End of Container -->
+        </div>
+        <!-- End of Contact Section -->
+
  <!-- Portfolio Section Start -->
         <div class="portfolio" id="portfolio">
             <div class="container">
@@ -102,7 +190,7 @@ $(".contents").eq(num).css("display","block");
                         <div class="portfolio-filter text-center">
                         
                             <ul class="nav">
-                                <li class="active now" data-filter="*">Aroma treatment</li>
+                                <li class="active now">Aroma treatment</li>
                                 <li data-filter=".accessories">Accessories</li>
                                 <li data-filter=".school">School/Event</li>
                             </ul>
@@ -269,7 +357,7 @@ $(".contents").eq(num).css("display","block");
                 <!-- Section Title Start -->
                 <div class="row text-center section-title">
                     <div class="col-md-12">
-                        <h3>ご予約・お問い合わせ</h3>
+                        <h3>Booking & Contact</h3>
                         <div class="separator"></div>
                     </div>
                 </div> <!-- End of Section Title -->

@@ -7,7 +7,7 @@ class TopController < ApplicationController
         @accessories = Service.where(category: 'Accessories')
         @goods = Service.where(category: 'Goods')
         @school = Service.where(category: 'School')
-        @news = Service.where(category: 'School').limit(10)
+        @news = Service.where(category: 'School' ).limit(10).reverse_order
         @inquiry = Inquiry.new
     end
     

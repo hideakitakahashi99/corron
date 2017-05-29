@@ -18,6 +18,7 @@ $(".contents").eq(num).css("display","block");
 
     <!-- Header Section Start -->
     <header id="treatment" class="top-area parallax" style="height: 300px;">
+    <div class=" header-overlay" style="height: 300px;"></div>
         <!-- Header Area Start -->
         <div class="header-area" >
             <!-- Container Start -->
@@ -134,8 +135,8 @@ $(".contents").eq(num).css("display","block");
                     <!-- About Right Column Start -->
                     <div class="col-md-5 col-md-offset-1 col-sm-6 col-xs-12">
                         <div class="about-top">
-                            <h5><%= @service.category %></h5><br>
-                            <h3><strong><%= @service.name %></strong><h3>
+                        <h5><%= @service.category %></h5><!--<h5><%= link_to 'http://www.facebook.com/sharer.php?u='+service_url, :target => :blank do %><%= image_tag "FB.png", :width => '20' %>share<% end %></h5>--><br>
+                            <h3><strong><%= @service.name %></strong></h3>
                             <% if @service.price? %>
                             <h3><strong><%= @service.price %>yen</strong></h3>
                             <% else %>
@@ -145,14 +146,24 @@ $(".contents").eq(num).css("display","block");
                             <h3><%= @service.eventdate.strftime("%Y年%m月%d日  %H:%M") %></h3>
                             <% else %>
                             <% end %>
-                            
-                            <p><%= simple_format(@service.content) %></p>
+
                         </div>
                     </div>  <!-- End of About Right Column -->
+
+                     <div class="col-md-12 margin-top50">
+                            <div style="word-wrap: break-word;"><%== @service.content %></div>
+                            </div>
                 </div> <!-- End of About Content -->
             </div> <!-- End of Container -->
         </div>
         <!-- End of About Section --> 
+
+<div class="about" id="about">
+            <div class="container">
+                <!-- About Content Start -->
+                <div class="row about-content">
+                </div></div></div>
+
 
         <!-- Contact Section Start -->
         <div class="contact" id="contact">
@@ -161,7 +172,7 @@ $(".contents").eq(num).css("display","block");
                 <!-- Section Title Start -->
                 <div class="row text-center section-title">
                     <div class="col-md-12">
-                        <h3>ご予約・お問い合わせ</h3>
+                        <h3>Booking & Contact</h3>
                         <div class="separator"></div>
                     </div>
                 </div> <!-- End of Section Title -->
@@ -228,7 +239,7 @@ $(".contents").eq(num).css("display","block");
                         <div class="portfolio-filter text-center">
                         
                             <ul class="nav">
-                                <li class="active now" data-filter="*">Aroma treatment</li>
+                                <li class="active now">Aroma treatment</li>
                                 <li data-filter=".accessories">Accessories</li>
                                 <li data-filter=".school">School/Event</li>
                             </ul>

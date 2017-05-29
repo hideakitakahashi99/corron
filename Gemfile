@@ -68,3 +68,5 @@ gem 'yui-compressor'
 
 gem 'aws-sdk-rails'
 gem 'figaro'
+gem 'mini_magick'
+gem 'ckeditor', github: 'galetahub/ckeditor'
